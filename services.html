@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Services — DEAD AIR</title>
+  <meta name="description" content="Cremation, burial and Viking send-offs for the digitally deceased. Burial plots, a factory reset with a longship, little extras and a price list in usd and tears.">
+  <meta name="theme-color" content="#0b0b0c">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Pinyon+Script&family=Silkscreen&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20261010-1">
+  <link rel="stylesheet" href="css/services.css?v=20261010-1">
+</head>
+<body class="is-loading" data-page="services">
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- ═════════════ WIPE · loader on the home, page transition everywhere ═════════════ -->
+  <div class="wipe" id="wipe" aria-hidden="true">
+    <div class="wipe-half wipe-half--t"></div>
+    <div class="wipe-half wipe-half--b"></div>
+    <div class="wipe-in">
+      <p class="wipe-logo">DEAD<span>AIR</span></p>
+      <canvas class="wipe-ecg" id="wipeEcg"></canvas>
+      <div class="wipe-row mono">
+        <span id="wipeMsg">lowering the lights</span>
+        <span id="wipeCount">000</span>
+      </div>
+      <div class="wipe-bar"><i id="wipeBar"></i></div>
+      <p class="wipe-sub mono">funeral directors for the digitally deceased · est. 2009</p>
+    </div>
+  </div>
+
+  <!-- ═════════════ HEADER ═════════════ -->
+  <header class="hdr" id="hdr">
+    <a class="logo" href="index.html" aria-label="Dead Air, home">
+      <svg class="logo-mark" viewBox="0 0 64 32" aria-hidden="true"><path d="M2 18h14l4-10 6 20 5-26 5 16h26" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="logo-txt">DEAD<b>AIR</b></span>
+    </a>
+
+    <nav class="nav" aria-label="Main">
+      <a href="services.html"><span class="nl" data-t="Services">Services</span></a>
+      <a href="obituaries.html"><span class="nl" data-t="Obituaries">Obituaries</span></a>
+      <a href="plan.html"><span class="nl" data-t="Plan a Funeral">Plan a Funeral</span></a>
+      <a href="florist.html"><span class="nl" data-t="Florist">Florist</span></a>
+      <a href="guestbook.html"><span class="nl" data-t="Guestbook">Guestbook</span></a>
+      <a href="grief.html"><span class="nl" data-t="Grief Support">Grief Support</span></a>
+    </nav>
+
+    <div class="hdr-r">
+      <button class="organ" id="organ" type="button" aria-pressed="false" title="Chapel organ">
+        <span class="organ-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span class="organ-lbl mono">organ <b>off</b></span>
+      </button>
+      <a class="hdr-cta" href="plan.html">Plan a funeral</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu"><span>Menu</span><i aria-hidden="true"></i></button>
+    </div>
+  </header>
+
+  <!-- ═════════════ MENU · phones and tablets ═════════════ -->
+  <div class="menu" id="menu" aria-hidden="true">
+    <nav class="menu-list" aria-label="Menu">
+      <a href="index.html"><i>00</i><b>Home</b></a>
+      <a href="services.html"><i>01</i><b>Services</b></a>
+      <a href="obituaries.html"><i>02</i><b>Obituaries</b></a>
+      <a href="plan.html"><i>03</i><b>Plan a Funeral</b></a>
+      <a href="florist.html"><i>04</i><b>Florist</b></a>
+      <a href="guestbook.html"><i>05</i><b>Guestbook</b></a>
+      <a href="grief.html"><i>06</i><b>Grief Support</b></a>
+    </nav>
+    <div class="menu-foot mono"><span>404 Lilac Lane · Server Room B</span><span>open 24/7 · we never log off</span><span>☏ 1-800-RIP-DATA</span></div>
+  </div>
+
+  <main id="main">
+
+    <!-- ═════════════ 01 · HERO · the price list ═════════════ -->
+    <section class="sv-hero" id="top">
+      <div class="sv-meta mono" aria-hidden="true">
+        <span>⌖ price list · effective 2026</span>
+        <span>all prices in usd and tears</span>
+        <span>ref. DA/SVC/<b id="svRef">0001</b></span>
+      </div>
+
+      <h1 class="sv-title"><span class="sv-t" data-split>SERVICES</span><span class="sv-sub serif">three ways to go, <i>and everything in between.</i></span></h1>
+
+      <ol class="sv-list" id="svList">
+        <li><a href="#cremation" data-prev="cremation">
+          <span class="sl-no mono">01</span><span class="sl-name">Cremation</span><span class="sl-eq mono">= permanent delete</span><span class="sl-price serif">$0</span>
+        </a></li>
+        <li><a href="#burial" data-prev="burial">
+          <span class="sl-no mono">02</span><span class="sl-name">Burial</span><span class="sl-eq mono">= archive</span><span class="sl-price serif">$4.99<small>/mo</small></span>
+        </a></li>
+        <li><a href="#viking" data-prev="viking">
+          <span class="sl-no mono">03</span><span class="sl-name">Viking</span><span class="sl-eq mono">= factory reset</span><span class="sl-price serif">on request</span>
+        </a></li>
+      </ol>
+
+      <!-- the preview that follows the cursor over the list -->
+      <div class="sv-prev" id="svPrev" aria-hidden="true">
+        <div class="slot ht-img" data-key="cremation" data-img="img/SERVICES/svc-cremation.jpg" data-ratio="4/5"><div class="ph"><b>cremation</b><i>img/SERVICES/svc-cremation.jpg</i></div></div>
+        <div class="slot ht-img" data-key="burial" data-img="img/SERVICES/svc-burial.jpg" data-ratio="4/5"><div class="ph"><b>burial</b><i>img/SERVICES/svc-burial.jpg</i></div></div>
+        <div class="slot ht-img" data-key="viking" data-img="img/SERVICES/svc-viking.jpg" data-ratio="4/5"><div class="ph"><b>viking</b><i>img/SERVICES/svc-viking.jpg</i></div></div>
+      </div>
+
+      <p class="sv-note mono">every service includes: a quiet room, a printed program, lilies, and one person who says the name out loud.</p>
+    </section>
+
+    <!-- ═════════════ 02 · CREMATION · the word burns ═════════════ -->
+    <section class="cr" id="cremation">
+      <div class="cr-pin">
+        <header class="cr-hd">
+          <p class="mono">Nº 01 · cremation · = permanent delete</p>
+          <p class="cr-size mono">file size <b id="crSize">2.40 MB</b></p>
+        </header>
+
+        <div class="cr-stage">
+          <canvas class="cr-canvas" id="crCanvas" aria-hidden="true"></canvas>
+          <h2 class="cr-word">Cremation</h2>
+        </div>
+
+        <ol class="cr-steps" id="crSteps">
+          <li class="is-on"><span class="mono">01 · arrival</span><b>The file is received.</b><p>Dez checks it in. Name, size, last modified. It is handled with gloves.</p></li>
+          <li><span class="mono">02 · the viewing</span><b>One last look.</b><p>Ten minutes, alone, in a dim room. You may scroll. You may not screenshot.</p></li>
+          <li><span class="mono">03 · the fire</span><b>Shift + delete.</b><p>Performed by Vera, by hand, with a single key. There is no "are you sure". You were sure.</p></li>
+          <li><span class="mono">04 · the urn</span><b>Nothing left.</b><p>The ashes are emailed to you as a 0 KB file in a password-protected .zip. Nobody has ever opened one.</p>
+            <span class="slot cut cr-urn" data-img="img/SERVICES/urn.webp" data-alt="A small black urn"><span class="ph"><b>urn</b><i>img/SERVICES/urn.webp</i></span></span>
+          </li>
+        </ol>
+        <p class="cr-hint mono" aria-hidden="true">keep scrolling · it's already burning</p>
+      </div>
+    </section>
+
+    <!-- ═════════════ 03 · BURIAL · the cemetery, sideways ═════════════ -->
+    <section class="bu" id="burial">
+      <div class="bu-pin">
+        <header class="bu-hd">
+          <p class="mono">Nº 02 · burial · = archive</p>
+          <h2 class="bu-title">Burial <i class="serif">plots</i></h2>
+          <p class="bu-intro">Laid to rest, not erased. Choose a plot, and visit whenever you like. Please don't dig anything up at 2 AM.</p>
+        </header>
+
+        <div class="bu-track" id="buTrack">
+          <article class="plot">
+            <div class="slot ht-img" data-img="img/SERVICES/plot-folder.jpg" data-alt="A folder on an old desktop" data-ratio="4/3"><div class="ph"><b>plot a</b><i>img/SERVICES/plot-folder.jpg</i></div></div>
+            <p class="plot-no mono">plot a · /archive/old</p>
+            <h3 class="plot-name">The Unindexed Folder</h3>
+            <p class="plot-txt">Six folders deep, named "stuff 2". Search will never find it. You will, once a year, by accident.</p>
+            <p class="plot-price"><span class="serif">$4.99</span><span class="mono">per month · shade included</span></p>
+          </article>
+          <article class="plot">
+            <div class="slot ht-img" data-img="img/SERVICES/plot-drive.jpg" data-alt="An external hard drive in a drawer" data-ratio="4/3"><div class="ph"><b>plot b</b><i>img/SERVICES/plot-drive.jpg</i></div></div>
+            <p class="plot-no mono">plot b · drawer, bottom left</p>
+            <h3 class="plot-name">The Hard Drive in a Drawer</h3>
+            <p class="plot-txt">A 500 GB drive, a tangle of cables, a sticky note that says DO NOT FORMAT. The cable is not included. It never is.</p>
+            <p class="plot-price"><span class="serif">$29</span><span class="mono">one-off · cable sold separately</span></p>
+          </article>
+          <article class="plot">
+            <div class="slot ht-img" data-img="img/SERVICES/plot-cold.jpg" data-alt="A server room in blue light" data-ratio="4/3"><div class="ph"><b>plot c</b><i>img/SERVICES/plot-cold.jpg</i></div></div>
+            <p class="plot-no mono">plot c · cold storage, iceland</p>
+            <h3 class="plot-name">Cold Storage</h3>
+            <p class="plot-txt">Kept at four degrees in a quiet building with no windows. Retrieval takes 48 hours, which is exactly enough time to change your mind.</p>
+            <p class="plot-price"><span class="serif">$12</span><span class="mono">per month · retrieval $40</span></p>
+          </article>
+          <article class="plot plot--mau">
+            <div class="slot ht-img" data-img="img/SERVICES/plot-mausoleum.jpg" data-alt="A marble mausoleum" data-ratio="4/3"><div class="ph"><b>mausoleum</b><i>img/SERVICES/plot-mausoleum.jpg</i></div></div>
+            <p class="plot-no mono">the mausoleum · 2 tb, family plan</p>
+            <h3 class="plot-name">The Mausoleum</h3>
+            <p class="plot-txt">For whole eras. Every phone you've owned, backed up and laid side by side. Marble, columns, auto-renewal you'll forget to cancel.</p>
+            <p class="plot-price"><span class="serif">$99</span><span class="mono">per month · forever, literally</span></p>
+          </article>
+          <div class="bu-end">
+            <p class="script">rest well.</p>
+            <p class="mono">visiting hours: whenever you can't sleep</p>
+          </div>
+        </div>
+        <div class="bu-ground" aria-hidden="true"><i id="buBar"></i></div>
+      </div>
+    </section>
+
+    <!-- ═════════════ 04 · VIKING · the factory reset ═════════════ -->
+    <section class="vk" id="viking">
+      <div class="vk-pin">
+        <canvas class="vk-fire" id="vkFire" aria-hidden="true"></canvas>
+        <div class="vk-copy">
+          <p class="mono">Nº 03 · viking · = factory reset</p>
+          <h2 class="vk-title">Viking</h2>
+          <div class="vk-lines" id="vkLines" aria-live="polite">
+            <p class="is-on">The whole device, set adrift.</p>
+            <p>Every photo.</p>
+            <p>Every note.</p>
+            <p>Every draft you didn't send.</p>
+            <p>Then, the welcome screen.</p>
+          </div>
+        </div>
+
+        <div class="phone" id="phone" aria-hidden="true">
+          <div class="phone-in">
+            <div class="ph-bar mono"><span>23:59</span><span>●●●○ 1%</span></div>
+            <p class="ph-t mono">erasing all content and settings…</p>
+            <ul class="ph-list mono" id="phList">
+              <li><span>photos</span><b data-n="12402">12,402</b></li>
+              <li><span>screenshots</span><b data-n="4980">4,980</b></li>
+              <li><span>notes</span><b data-n="311">311</b></li>
+              <li><span>drafts</span><b data-n="2301">2,301</b></li>
+              <li><span>voice memos</span><b data-n="87">87</b></li>
+              <li><span>saved passwords</span><b data-n="164">164</b></li>
+            </ul>
+            <div class="ph-prog"><i id="phBar"></i></div>
+            <p class="ph-pc mono" id="phPc">0%</p>
+            <div class="ph-hello" id="phHello"><span class="script" id="phWord">hello</span><span class="mono">swipe up to begin</span></div>
+          </div>
+        </div>
+
+        <div class="vk-side mono">
+          <p>includes</p>
+          <ul>
+            <li>longship, refurbished, 64 GB</li>
+            <li>one flaming arrow, one attempt</li>
+            <li>"hello" in every language</li>
+            <li>no backups. we check.</li>
+          </ul>
+          <p class="vk-price serif">on request<small class="mono">it costs everything</small></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════════ 05 · WHICH GOODBYE · three questions ═════════════ -->
+    <section class="wq" id="which">
+      <header class="sec-hd">
+        <p class="sec-no mono">04 / not sure?</p>
+        <h2 class="sec-title">Which <i class="serif">goodbye?</i></h2>
+        <p class="sec-note mono"><span>three questions</span><span>no wrong answers. some sad ones.</span></p>
+      </header>
+
+      <div class="wq-grid">
+        <form class="wq-form" id="wqForm">
+          <fieldset class="wq-q">
+            <legend><span class="mono">q1</span>Will you want to see it again?</legend>
+            <label><input type="radio" name="q1" value="yes"><span>yes, sometimes</span></label>
+            <label><input type="radio" name="q1" value="no"><span>never</span></label>
+          </fieldset>
+          <fieldset class="wq-q">
+            <legend><span class="mono">q2</span>Is anyone else in it?</legend>
+            <label><input type="radio" name="q2" value="yes"><span>yes, that's the problem</span></label>
+            <label><input type="radio" name="q2" value="no"><span>just me</span></label>
+          </fieldset>
+          <fieldset class="wq-q">
+            <legend><span class="mono">q3</span>Is it after midnight right now?</legend>
+            <label><input type="radio" name="q3" value="yes"><span>it is</span></label>
+            <label><input type="radio" name="q3" value="no"><span>it isn't</span></label>
+          </fieldset>
+        </form>
+
+        <div class="wq-card" id="wqCard">
+          <p class="mono wq-lbl">our recommendation</p>
+          <p class="wq-res" id="wqRes">—</p>
+          <p class="wq-why serif" id="wqWhy">Answer the three questions. Take your time. We are open all night.</p>
+          <a class="btn btn--ink" href="plan.html" id="wqGo"><span>Plan this funeral</span><i aria-hidden="true">→</i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════════ 06 · EXTRAS · the menu ═════════════ -->
+    <section class="ex" id="extras">
+      <header class="sec-hd">
+        <p class="sec-no mono">05 / extras</p>
+        <h2 class="sec-title">Little <i class="serif">extras</i></h2>
+        <p class="sec-note mono"><span>add any of them to your plan</span><span>they'll be waiting on the plan page</span></p>
+      </header>
+
+      <ul class="ex-list" id="exList">
+        <li data-id="eulogy" data-p="40"><span class="ex-name">A eulogy, written by Dez</span><i class="ex-dots"></i><span class="ex-p mono">$40</span><button type="button" class="ex-add mono">add +</button></li>
+        <li data-id="mourner" data-p="30"><span class="ex-name">Professional mourner <small>(likes every old post)</small></span><i class="ex-dots"></i><span class="ex-p mono">$30/h</span><button type="button" class="ex-add mono">add +</button></li>
+        <li data-id="receipts" data-p="9"><span class="ex-name">Read receipts, turned off forever</span><i class="ex-dots"></i><span class="ex-p mono">$9</span><button type="button" class="ex-add mono">add +</button></li>
+        <li data-id="anniversary" data-p="15"><span class="ex-name">A last post, scheduled for the anniversary</span><i class="ex-dots"></i><span class="ex-p mono">$15</span><button type="button" class="ex-add mono">add +</button></li>
+        <li data-id="password" data-p="5"><span class="ex-name">Password, cremated separately</span><i class="ex-dots"></i><span class="ex-p mono">$5</span><button type="button" class="ex-add mono">add +</button></li>
+        <li data-id="unfollow" data-p="12"><span class="ex-name">Mutual unfollow ceremony</span><i class="ex-dots"></i><span class="ex-p mono">$12</span><button type="button" class="ex-add mono">add +</button></li>
+        <li data-id="open" data-p="60"><span class="ex-name">Open casket <small>(profile public for one last day)</small></span><i class="ex-dots"></i><span class="ex-p mono">$60</span><button type="button" class="ex-add mono">add +</button></li>
+        <li data-id="closed" data-p="0"><span class="ex-name">Closed casket <small>(private, forever)</small></span><i class="ex-dots"></i><span class="ex-p mono">free</span><button type="button" class="ex-add mono">add +</button></li>
+        <li data-id="crow" data-p="3"><span class="ex-name">Cache the crow attends</span><i class="ex-dots"></i><span class="ex-p mono">$3 <small>+ something shiny</small></span><button type="button" class="ex-add mono">add +</button></li>
+      </ul>
+
+      <div class="ex-sum" id="exSum">
+        <p class="mono"><b id="exN">0</b> extras · <b id="exT">$0</b></p>
+        <a class="btn btn--ink" href="plan.html"><span>Continue to plan</span><i aria-hidden="true">→</i></a>
+      </div>
+    </section>
+
+    <!-- ═════════════ 07 · FAQ ═════════════ -->
+    <section class="faq" id="faq">
+      <header class="sec-hd sec-hd--dark">
+        <p class="sec-no mono">06 / questions people ask at 3 am</p>
+        <h2 class="sec-title">You <i class="serif">asked</i></h2>
+        <p class="sec-note mono"><span>still can't find it?</span><span>☏ 1-800-RIP-DATA</span></p>
+      </header>
+      <div class="faq-list">
+        <details><summary><span class="mono">01</span>Can you bring it back?<i aria-hidden="true"></i></summary><div class="faq-a"><p>No. That's the whole point. We are a funeral home, not a backup service. If you want it back, you didn't want a funeral, you wanted a nap.</p></div></details>
+        <details><summary><span class="mono">02</span>Can I attend my own account's funeral?<i aria-hidden="true"></i></summary><div class="faq-a"><p>Most people do. Sit in the back. Wear sunglasses. Nobody will say anything, except Cache.</p></div></details>
+        <details><summary><span class="mono">03</span>What happens to the comments?<i aria-hidden="true"></i></summary><div class="faq-a"><p>They are read aloud during the service. All of them. Yes, even yours from 2012. Especially yours from 2012.</p></div></details>
+        <details><summary><span class="mono">04</span>Do you do pets?<i aria-hidden="true"></i></summary><div class="faq-a"><p>Only virtual ones. Biscuit's service is still the most attended in the history of the house.</p></div></details>
+        <details><summary><span class="mono">05</span>What if someone else has the password?<i aria-hidden="true"></i></summary><div class="faq-a"><p>Then it isn't dead, it's haunted. We offer a separate service for that. It involves a candle, a new email address and a long walk.</p></div></details>
+        <details><summary><span class="mono">06</span>Is a group chat one funeral or eleven?<i aria-hidden="true"></i></summary><div class="faq-a"><p>One funeral, eleven mourners, at least two of them pretending they never muted it.</p></div></details>
+      </div>
+    </section>
+
+    <!-- ═════════════ 08 · CTA ═════════════ -->
+    <section class="sv-cta">
+      <p class="mono">whenever you're ready</p>
+      <h2 class="sv-cta-t"><span>Ready when</span><span>you are.</span></h2>
+      <p class="sv-cta-s serif"><i>(you're not. nobody is. that's fine.)</i></p>
+      <a class="btn btn--ink" href="plan.html"><span>Plan a funeral</span><i aria-hidden="true">→</i></a>
+    </section>
+
+  </main>
+
+  <!-- ═════════════ FOOTER ═════════════ -->
+  <footer class="ftr">
+    <p class="ftr-big" aria-label="We never log off"><span>WE NEVER</span><span>LOG OFF.</span></p>
+    <div class="ftr-grid">
+      <div>
+        <p class="ftr-logo">DEAD<b>AIR</b></p>
+        <p class="ftr-small">Funeral directors for the digitally deceased.<br>404 Lilac Lane · Server Room B<br>Open 24/7. Grief keeps no office hours.<br>☏ 1-800-RIP-DATA</p>
+      </div>
+      <nav class="ftr-nav" aria-label="Footer">
+        <a href="services.html">Services</a><a href="obituaries.html">Obituaries</a><a href="plan.html">Plan a Funeral</a><a href="florist.html">Florist</a><a href="guestbook.html">Guestbook</a><a href="grief.html">Grief Support</a>
+      </nav>
+      <div class="ftr-sign">
+        <p class="mono">concept, design &amp; code</p>
+        <p class="script">ghostly.grl ♥</p>
+        <p class="mono ftr-tiny">a fictional funeral home · © 2026</p>
+      </div>
+    </div>
+  </footer>
+
+  <i class="dead-px" id="deadPx" aria-hidden="true"></i>
+  <div class="cursor" id="cursor" aria-hidden="true"><i></i><span class="mono" id="cursorLbl"></span></div>
+  <div class="toast mono" id="toast" role="status" aria-live="polite"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="js/main.js?v=20261010-1"></script>
+  <script src="js/eggs.js?v=20261010-1"></script>
+  <script src="js/services.js?v=20261010-1"></script>
+</body>
+  <!--
+   *    /\_/\      +
+       ( o.o )   <3  ghostly.grl
+   +    > ^ <          *
+-->
+</html>

@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grief Support — DEAD AIR</title>
+  <meta name="description" content="Grief support for the digitally bereaved: breathe, the five stages of digital grief, a 3 AM phone line, support groups, lanterns to let go, and permission to log off.">
+  <meta name="theme-color" content="#0b0b0c">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Pinyon+Script&family=Silkscreen&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20261010-1">
+  <link rel="stylesheet" href="css/grief.css?v=20261010-1">
+</head>
+<body class="is-loading" data-page="grief">
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- ═════════════ WIPE · loader on the home, page transition everywhere ═════════════ -->
+  <div class="wipe" id="wipe" aria-hidden="true">
+    <div class="wipe-half wipe-half--t"></div>
+    <div class="wipe-half wipe-half--b"></div>
+    <div class="wipe-in">
+      <p class="wipe-logo">DEAD<span>AIR</span></p>
+      <canvas class="wipe-ecg" id="wipeEcg"></canvas>
+      <div class="wipe-row mono">
+        <span id="wipeMsg">lowering the lights</span>
+        <span id="wipeCount">000</span>
+      </div>
+      <div class="wipe-bar"><i id="wipeBar"></i></div>
+      <p class="wipe-sub mono">funeral directors for the digitally deceased · est. 2009</p>
+    </div>
+  </div>
+
+  <!-- ═════════════ HEADER ═════════════ -->
+  <header class="hdr" id="hdr">
+    <a class="logo" href="index.html" aria-label="Dead Air, home">
+      <svg class="logo-mark" viewBox="0 0 64 32" aria-hidden="true"><path d="M2 18h14l4-10 6 20 5-26 5 16h26" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="logo-txt">DEAD<b>AIR</b></span>
+    </a>
+
+    <nav class="nav" aria-label="Main">
+      <a href="services.html"><span class="nl" data-t="Services">Services</span></a>
+      <a href="obituaries.html"><span class="nl" data-t="Obituaries">Obituaries</span></a>
+      <a href="plan.html"><span class="nl" data-t="Plan a Funeral">Plan a Funeral</span></a>
+      <a href="florist.html"><span class="nl" data-t="Florist">Florist</span></a>
+      <a href="guestbook.html"><span class="nl" data-t="Guestbook">Guestbook</span></a>
+      <a href="grief.html"><span class="nl" data-t="Grief Support">Grief Support</span></a>
+    </nav>
+
+    <div class="hdr-r">
+      <button class="organ" id="organ" type="button" aria-pressed="false" title="Chapel organ">
+        <span class="organ-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span class="organ-lbl mono">organ <b>off</b></span>
+      </button>
+      <a class="hdr-cta" href="plan.html">Plan a funeral</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu"><span>Menu</span><i aria-hidden="true"></i></button>
+    </div>
+  </header>
+
+  <!-- ═════════════ MENU · phones and tablets ═════════════ -->
+  <div class="menu" id="menu" aria-hidden="true">
+    <nav class="menu-list" aria-label="Menu">
+      <a href="index.html"><i>00</i><b>Home</b></a>
+      <a href="services.html"><i>01</i><b>Services</b></a>
+      <a href="obituaries.html"><i>02</i><b>Obituaries</b></a>
+      <a href="plan.html"><i>03</i><b>Plan a Funeral</b></a>
+      <a href="florist.html"><i>04</i><b>Florist</b></a>
+      <a href="guestbook.html"><i>05</i><b>Guestbook</b></a>
+      <a href="grief.html"><i>06</i><b>Grief Support</b></a>
+    </nav>
+    <div class="menu-foot mono"><span>404 Lilac Lane · Server Room B</span><span>open 24/7 · we never log off</span><span>☏ 1-800-RIP-DATA</span></div>
+  </div>
+
+  <main id="main">
+
+    <!-- ═════════════ 01 · BREATHE ═════════════ -->
+    <section class="br" id="top">
+      <div class="br-meta mono" aria-hidden="true"><span>⌖ grief support at dead air</span><span>free · always · no account needed</span><span>open 24/7</span></div>
+      <div class="orb-wrap" aria-hidden="true"><div class="orb" id="orb"></div><div class="orb orb--2"></div></div>
+      <h1 class="br-title"><span data-split>GRIEF</span><span data-split>SUPPORT</span></h1>
+      <div class="br-foot">
+        <p class="br-cue serif" id="brCue" aria-live="polite">You don't have to do anything here.</p>
+        <button type="button" class="btn btn--ink" id="brBtn" aria-pressed="false"><span>Breathe with us</span><i aria-hidden="true">○</i></button>
+      </div>
+    </section>
+
+    <!-- ═════════════ 02 · THE FIVE STAGES ═════════════ -->
+    <section class="stg" id="stages">
+      <div class="stg-pin">
+        <div class="stg-top mono"><span>the five stages of digital grief</span><span>stage <b id="stgN">01</b> / 05</span></div>
+
+        <div class="stg-layer is-on" data-s="0">
+          <p class="stg-name">Denial</p>
+          <div class="ld"><i class="ld-spin" aria-hidden="true"></i><p class="mono">it's just loading.</p></div>
+          <div class="ld-bar"><i id="ldBar"></i></div><p class="ld-pc mono" id="ldPc">0%</p>
+          <p class="stg-cap serif">You refresh the page. Then again. It's probably the wifi.</p>
+        </div>
+
+        <div class="stg-layer stg--anger" data-s="1">
+          <p class="stg-name glitch" data-t="ANGER">ANGER</p>
+          <p class="stg-shout" aria-hidden="true">WHO UNFOLLOWED WHO</p>
+          <p class="stg-cap serif">You go through the follower list. Twice. With a calculator.</p>
+        </div>
+
+        <div class="stg-layer stg--barg" data-s="2">
+          <p class="stg-name">Bargaining</p>
+          <div class="login" aria-hidden="true">
+            <p class="login-h">sign in</p>
+            <p class="login-f"><span>username</span><b>midnight_thoughts</b></p>
+            <p class="login-f"><span>password</span><b class="pw" id="pw"></b></p>
+            <p class="login-err mono" id="pwErr">incorrect password. <span id="pwTry">1</span> attempt(s) left.</p>
+          </div>
+          <p class="stg-cap serif">If I can just log in one more time, I'll back everything up. I promise.</p>
+        </div>
+
+        <div class="stg-layer stg--dep" data-s="3">
+          <div class="dep-rain" aria-hidden="true" id="rain"></div>
+          <p class="stg-name">Depression</p>
+          <p class="dep-clock mono" id="depClock">3:07 AM</p>
+          <p class="stg-cap serif">Scrolling the archive in the dark. Liking nothing. Remembering everything.</p>
+        </div>
+
+        <div class="stg-layer stg--acc" data-s="4">
+          <p class="stg-name">Acceptance</p>
+          <p class="acc-off serif">log off.</p>
+          <p class="stg-cap serif">It was real. It mattered. It's over. All three are true.</p>
+        </div>
+
+        <div class="stg-prog" aria-hidden="true"><i id="stgBar"></i></div>
+      </div>
+    </section>
+
+    <!-- ═════════════ 03 · THE 3 AM LINE ═════════════ -->
+    <section class="hl" id="hotline">
+      <header class="hl-hd">
+        <p class="mono">03 / the 3 am line</p>
+        <h2 class="hl-title">Call <i class="serif">the house</i></h2>
+        <p class="hl-sub">Dial 1-800-RIP-DATA. Vera picks up. She always does.</p>
+      </header>
+
+      <div class="hl-grid">
+        <div class="phone2">
+          <p class="dial mono" id="dial" aria-live="polite">&nbsp;</p>
+          <div class="pad" id="pad">
+            <button type="button" data-k="1">1<small>&nbsp;</small></button><button type="button" data-k="2">2<small>abc</small></button><button type="button" data-k="3">3<small>def</small></button>
+            <button type="button" data-k="4">4<small>ghi</small></button><button type="button" data-k="5">5<small>jkl</small></button><button type="button" data-k="6">6<small>mno</small></button>
+            <button type="button" data-k="7">7<small>pqrs</small></button><button type="button" data-k="8">8<small>tuv</small></button><button type="button" data-k="9">9<small>wxyz</small></button>
+            <button type="button" data-k="*">*</button><button type="button" data-k="0">0<small>+</small></button><button type="button" data-k="#">#</button>
+          </div>
+          <div class="pad-act">
+            <button type="button" class="call" id="callBtn" aria-label="Call">☏ call</button>
+            <button type="button" class="hang" id="hangBtn" aria-label="Hang up">hang up</button>
+          </div>
+          <button type="button" class="speed mono" id="speed">speed dial: 1-800-RIP-DATA</button>
+        </div>
+
+        <div class="ivr" id="ivr" aria-live="polite">
+          <p class="ivr-idle mono">the line is quiet. dial, or use speed dial.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════════ 04 · SUPPORT GROUPS ═════════════ -->
+    <section class="sg" id="groups">
+      <header class="sec-hd">
+        <p class="sec-no mono">04 / support groups</p>
+        <h2 class="sec-title">You're not <i class="serif">alone</i></h2>
+        <p class="sec-note mono"><span>tea, biscuits, chairs in a circle</span><span>cameras off is fine</span></p>
+      </header>
+      <ul class="sg-list" id="sgList">
+        <li><span class="mono sg-when">mon · 21:00</span><b>Unfollowers Anonymous</b><span class="sg-where mono">chapel b</span><span class="sg-txt">For people who were unfollowed, and people who did the unfollowing. Same room. Different chairs.</span><button type="button" class="sg-join mono" data-seats="4">save a seat · <em>4</em> left</button></li>
+        <li><span class="mono sg-when">tue · 19:30</span><b>Left on Read</b><span class="sg-where mono">the garden</span><span class="sg-txt">A quiet circle. Nobody has to reply. That's sort of the point.</span><button type="button" class="sg-join mono" data-seats="9">save a seat · <em>9</em> left</button></li>
+        <li><span class="mono sg-when">wed · 23:45</span><b>Former Moderators</b><span class="sg-where mono">screening room</span><span class="sg-txt">You ran a forum at fourteen. You had power. You miss it. Raven is usually here.</span><button type="button" class="sg-join mono" data-seats="2">save a seat · <em>2</em> left</button></li>
+        <li><span class="mono sg-when">thu · 18:00</span><b>Ex-Bloggers in Recovery</b><span class="sg-where mono">chapel a</span><span class="sg-txt">Lowercase welcome. No song on autoplay, please. We tried that.</span><button type="button" class="sg-join mono" data-seats="7">save a seat · <em>7</em> left</button></li>
+        <li><span class="mono sg-when">sun · 03:00</span><b>Can't Sleep, Still Scrolling</b><span class="sg-where mono">online · cameras off</span><span class="sg-txt">The busiest meeting of the week. Bring a blanket. Put the phone face down when you're ready.</span><button type="button" class="sg-join mono" data-seats="31">save a seat · <em>31</em> left</button></li>
+      </ul>
+    </section>
+
+    <!-- ═════════════ 05 · LET GO · lanterns ═════════════ -->
+    <section class="lt" id="let-go">
+      <canvas class="sky" id="sky" aria-hidden="true"></canvas>
+      <div class="lt-in">
+        <p class="mono">05 / let go</p>
+        <h2 class="lt-title">Let it <i class="serif">go up</i></h2>
+        <p class="lt-sub">Write the thing you can't stop thinking about. Hold the button. Let it rise until you can't see it anymore.</p>
+        <form class="lt-form" id="ltForm" autocomplete="off">
+          <input id="ltIn" maxlength="48" placeholder="the last voice note" aria-label="What are you letting go of?">
+          <button type="button" class="hold2" id="ltHold"><span class="hold2-fill" id="ltFill"></span><span class="hold2-t">hold to let go</span></button>
+        </form>
+        <p class="lt-count mono"><b id="ltN">0</b> lanterns tonight</p>
+      </div>
+    </section>
+
+    <!-- ═════════════ 06 · LOG OFF ═════════════ -->
+    <section class="lo" id="log-off">
+      <p class="mono">06 / the end of the visit</p>
+      <h2 class="lo-title">It's okay to <i class="serif">log off.</i></h2>
+      <button type="button" class="lo-btn" id="loBtn"><span>log off</span></button>
+      <p class="lo-real">This is a fictional funeral home, made with love and dark jokes. If you're grieving a real person, or going through something heavy, please talk to someone you trust, or find a free, confidential helpline near you at <a href="https://findahelpline.com" target="_blank" rel="noopener">findahelpline.com</a>.</p>
+    </section>
+
+  </main>
+
+  <div class="night" id="night" hidden>
+    <p class="night-t script">goodnight.</p>
+    <p class="night-s mono">the house will keep the lights on.</p>
+    <button type="button" class="night-b mono" id="nightB">come back</button>
+  </div>
+
+  <!-- ═════════════ FOOTER ═════════════ -->
+  <footer class="ftr">
+    <p class="ftr-big" aria-label="We never log off"><span>WE NEVER</span><span>LOG OFF.</span></p>
+    <div class="ftr-grid">
+      <div>
+        <p class="ftr-logo">DEAD<b>AIR</b></p>
+        <p class="ftr-small">Funeral directors for the digitally deceased.<br>404 Lilac Lane · Server Room B<br>Open 24/7. Grief keeps no office hours.<br>☏ 1-800-RIP-DATA</p>
+      </div>
+      <nav class="ftr-nav" aria-label="Footer">
+        <a href="services.html">Services</a><a href="obituaries.html">Obituaries</a><a href="plan.html">Plan a Funeral</a><a href="florist.html">Florist</a><a href="guestbook.html">Guestbook</a><a href="grief.html">Grief Support</a>
+      </nav>
+      <div class="ftr-sign">
+        <p class="mono">concept, design &amp; code</p>
+        <p class="script">ghostly.grl ♥</p>
+        <p class="mono ftr-tiny">a fictional funeral home · © 2026</p>
+      </div>
+    </div>
+  </footer>
+
+  <i class="dead-px" id="deadPx" aria-hidden="true"></i>
+  <div class="cursor" id="cursor" aria-hidden="true"><i></i><span class="mono" id="cursorLbl"></span></div>
+  <div class="toast mono" id="toast" role="status" aria-live="polite"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="js/main.js?v=20261010-1"></script>
+  <script src="js/eggs.js?v=20261010-1"></script>
+  <script src="js/grief.js?v=20261010-1"></script>
+</body>
+  <!--
+   *    /\_/\      +
+       ( o.o )   <3  ghostly.grl
+   +    > ^ <          *
+-->
+</html>

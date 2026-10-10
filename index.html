@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DEAD AIR — funeral directors for the digitally deceased</title>
+  <meta name="description" content="An elegant, family-owned funeral home for the platforms we loved and the accounts we lost. Cremation, burial and Viking send-offs for profiles, group chats, blogs, save files and everything else that went quiet.">
+  <meta name="theme-color" content="#0b0b0c">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Pinyon+Script&family=Silkscreen&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20261010-1">
+  <link rel="stylesheet" href="css/home.css?v=20261010-1">
+</head>
+<body class="is-loading" data-page="home">
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- ═════════════ WIPE · loader on the home, page transition everywhere ═════════════ -->
+  <div class="wipe" id="wipe" aria-hidden="true">
+    <div class="wipe-half wipe-half--t"></div>
+    <div class="wipe-half wipe-half--b"></div>
+    <div class="wipe-in">
+      <p class="wipe-logo">DEAD<span>AIR</span></p>
+      <canvas class="wipe-ecg" id="wipeEcg"></canvas>
+      <div class="wipe-row mono">
+        <span id="wipeMsg">lowering the lights</span>
+        <span id="wipeCount">000</span>
+      </div>
+      <div class="wipe-bar"><i id="wipeBar"></i></div>
+      <p class="wipe-sub mono">funeral directors for the digitally deceased · est. 2009</p>
+    </div>
+  </div>
+
+  <!-- ═════════════ HEADER ═════════════ -->
+  <header class="hdr" id="hdr">
+    <a class="logo" href="index.html" aria-label="Dead Air, home">
+      <svg class="logo-mark" viewBox="0 0 64 32" aria-hidden="true"><path d="M2 18h14l4-10 6 20 5-26 5 16h26" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="logo-txt">DEAD<b>AIR</b></span>
+    </a>
+
+    <nav class="nav" aria-label="Main">
+      <a href="services.html"><span class="nl" data-t="Services">Services</span></a>
+      <a href="obituaries.html"><span class="nl" data-t="Obituaries">Obituaries</span></a>
+      <a href="plan.html"><span class="nl" data-t="Plan a Funeral">Plan a Funeral</span></a>
+      <a href="florist.html"><span class="nl" data-t="Florist">Florist</span></a>
+      <a href="guestbook.html"><span class="nl" data-t="Guestbook">Guestbook</span></a>
+      <a href="grief.html"><span class="nl" data-t="Grief Support">Grief Support</span></a>
+    </nav>
+
+    <div class="hdr-r">
+      <button class="organ" id="organ" type="button" aria-pressed="false" title="Chapel organ">
+        <span class="organ-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span class="organ-lbl mono">organ <b>off</b></span>
+      </button>
+      <a class="hdr-cta" href="plan.html">Plan a funeral</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu"><span>Menu</span><i aria-hidden="true"></i></button>
+    </div>
+  </header>
+
+  <!-- ═════════════ MENU · phones and tablets ═════════════ -->
+  <div class="menu" id="menu" aria-hidden="true">
+    <nav class="menu-list" aria-label="Menu">
+      <a href="index.html"><i>00</i><b>Home</b></a>
+      <a href="services.html"><i>01</i><b>Services</b></a>
+      <a href="obituaries.html"><i>02</i><b>Obituaries</b></a>
+      <a href="plan.html"><i>03</i><b>Plan a Funeral</b></a>
+      <a href="florist.html"><i>04</i><b>Florist</b></a>
+      <a href="guestbook.html"><i>05</i><b>Guestbook</b></a>
+      <a href="grief.html"><i>06</i><b>Grief Support</b></a>
+    </nav>
+    <div class="menu-foot mono"><span>404 Lilac Lane · Server Room B</span><span>open 24/7 · we never log off</span><span>☏ 1-800-RIP-DATA</span></div>
+  </div>
+
+  <main id="main">
+
+    <!-- ═════════════ 01 · HERO · in loving memory ═════════════ -->
+    <section class="hero" id="hero">
+      <canvas class="static" id="static" aria-hidden="true"></canvas>
+
+      <div class="hero-meta mono" aria-hidden="true">
+        <span>⌖ FUNERAL DIRECTORS FOR THE DIGITALLY DECEASED</span>
+        <span>EST. 2009 · FAMILY OWNED</span>
+        <span>SERVICE Nº <b id="svcNo">0404</b></span>
+      </div>
+
+      <figure class="slot cut hero-lily" data-img="img/HOME/hero-lily.webp" data-alt="Two pale lilies" data-depth="18">
+        <div class="ph"><b>lily</b><i>img/HOME/hero-lily.webp</i></div>
+      </figure>
+
+      <h1 class="hero-title" id="heroTitle" aria-label="Dead Air">
+        <span class="ht ht--ghost" aria-hidden="true"><span class="ht-l">DEAD</span><span class="ht-l">AIR</span></span>
+        <span class="ht ht--main" aria-hidden="true"><span class="ht-l" data-split>DEAD</span><span class="ht-l" data-split>AIR</span></span>
+      </h1>
+
+      <figure class="hero-frame" data-depth="-14">
+        <div class="slot ht-img" data-img="img/HOME/hero-portrait.jpg" data-alt="A blurred old profile picture in a black frame" data-ratio="4/5">
+          <div class="ph"><b>the deceased</b><i>img/HOME/hero-portrait.jpg</i></div>
+        </div>
+        <figcaption class="mono"><span>profile_pic_final(2).jpg</span><span>2006 — 2011</span></figcaption>
+      </figure>
+
+      <p class="hero-script script" aria-hidden="true">in loving memory</p>
+
+      <div class="hero-foot">
+        <p class="hero-tag serif">for the platforms we loved<br><i>and the accounts we lost.</i></p>
+        <div class="hero-act">
+          <a class="btn btn--ink" href="plan.html"><span>Plan a funeral</span><i aria-hidden="true">→</i></a>
+          <a class="btn btn--line" href="#today"><span>Today's services</span><i aria-hidden="true">↓</i></a>
+        </div>
+        <p class="hero-scroll mono" aria-hidden="true"><i></i>scroll to pay your respects</p>
+      </div>
+    </section>
+
+    <!-- ═════════════ TICKER ═════════════ -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>CREMATION · BURIAL · VIKING</span><b>✝</b><span>OPEN 24/7 — WE NEVER LOG OFF</span><b>✝</b><span>NOTHING ONLINE IS FOREVER</span><b>✝</b><span>BUT EVERYTHING DESERVES A GOODBYE</span><b>✝</b>
+        <span>CREMATION · BURIAL · VIKING</span><b>✝</b><span>OPEN 24/7 — WE NEVER LOG OFF</span><b>✝</b><span>NOTHING ONLINE IS FOREVER</span><b>✝</b><span>BUT EVERYTHING DESERVES A GOODBYE</span><b>✝</b>
+      </div>
+    </div>
+
+    <!-- ═════════════ 02 · ORDER OF SERVICE · today's board ═════════════ -->
+    <section class="today" id="today">
+      <header class="sec-hd">
+        <p class="sec-no mono">01 / order of service</p>
+        <h2 class="sec-title">Today at <i class="serif">the house</i></h2>
+        <p class="sec-note mono"><span id="todayDate">…</span><span>local time <b id="todayClock">--:--</b></span></p>
+      </header>
+
+      <div class="board" id="board" role="table" aria-label="Today's services">
+        <div class="board-row board-row--hd" role="row">
+          <span role="columnheader">time</span><span role="columnheader">the deceased</span><span role="columnheader">service</span><span role="columnheader">room</span><span role="columnheader">status</span>
+        </div>
+        <!-- rows from js/home.js -->
+      </div>
+      <p class="board-foot mono">all services are open to the public · dress code: black, or your old display name</p>
+    </section>
+
+    <!-- ═════════════ 03 · MANIFESTO · tape ═════════════ -->
+    <section class="mani" id="mani">
+      <div class="mani-tape" aria-hidden="true">
+        <span class="tp" style="--x:6%;--y:4%;--r:-3deg">you were <s>always</s> online.</span>
+        <span class="tp" style="--x:46%;--y:12%;--r:2deg">last seen <u>3 years ago</u></span>
+        <span class="tp" style="--x:8%;--y:91%;--r:1.5deg">it's so good <u>to see</u> you</span>
+        <span class="tp" style="--x:52%;--y:88%;--r:-2deg">don't be a <s>stranger</s> ghost</span>
+      </div>
+
+      <p class="mani-no mono">02 / who we are</p>
+      <h2 class="mani-txt" id="maniTxt">Nothing online is forever. Profiles go quiet, chats get muted, blogs stop loading, save files corrupt. We make sure every one of them gets a <em class="script">goodbye</em>.</h2>
+
+      <div class="mani-cols">
+        <p>Since 2009 the Vale family has laid to rest more than <b class="count" data-to="41208">0</b> accounts, <b class="count" data-to="9377">0</b> group chats and one entire social network (we don't talk about it).</p>
+        <p>We are not a backup service. We don't recover, restore or reactivate. We hold the door, dim the lights and say the name out loud, one last time.</p>
+      </div>
+    </section>
+
+    <!-- ═════════════ 04 · SERVICES · three ways to go ═════════════ -->
+    <section class="svc" id="services">
+      <header class="sec-hd sec-hd--dark">
+        <p class="sec-no mono">03 / services</p>
+        <h2 class="sec-title">Three ways <i class="serif">to go</i></h2>
+        <p class="sec-note mono"><span>hover or tap a card</span><span>to see it happen</span></p>
+      </header>
+
+      <div class="svc-grid">
+        <article class="card card--cremation" data-kind="cremation" tabindex="0">
+          <p class="card-no mono">Nº 01 · = permanent delete</p>
+          <div class="card-art"><canvas class="ash" aria-hidden="true"></canvas></div>
+          <h3 class="card-name">Cremation</h3>
+          <p class="card-txt">Gone in a flash. Nothing recoverable, nothing left to haunt you at 3 AM. The ashes are emailed to you as a <b>0 KB</b> file.</p>
+          <ul class="card-inc mono"><li>shift + delete, performed by a professional</li><li>empty-the-trash ceremony</li><li>urn (.zip, password protected)</li></ul>
+          <p class="card-price"><span class="mono">from</span> $0<small>it was always free</small></p>
+        </article>
+
+        <article class="card card--burial" data-kind="burial" tabindex="0">
+          <p class="card-no mono">Nº 02 · = archive</p>
+          <div class="card-art">
+            <div class="strata" aria-hidden="true">
+              <span>/archive</span><span>/archive/old</span><span>/archive/old/2019</span><span>/archive/old/2019/do-not-open</span>
+            </div>
+            <svg class="folder" viewBox="0 0 120 96" aria-hidden="true"><path d="M6 18a6 6 0 0 1 6-6h30l10 10h56a6 6 0 0 1 6 6v56a6 6 0 0 1-6 6H12a6 6 0 0 1-6-6z" fill="currentColor"/><path d="M6 34h108" stroke="#0b0b0c" stroke-width="3" opacity=".25"/></svg>
+            <i class="ground" aria-hidden="true"></i>
+          </div>
+          <h3 class="card-name">Burial</h3>
+          <p class="card-txt">Laid to rest in cold storage, six folders deep. Visit whenever you like. Please don't dig it up at 2 AM after two glasses of wine.</p>
+          <ul class="card-inc mono"><li>plot in a quiet, unindexed folder</li><li>headstone with last-modified date</li><li>annual "on this day" visit, optional</li></ul>
+          <p class="card-price"><span class="mono">from</span> $4.99<small>per month, forever</small></p>
+        </article>
+
+        <article class="card card--viking" data-kind="viking" tabindex="0">
+          <p class="card-no mono">Nº 03 · = factory reset</p>
+          <div class="card-art">
+            <div class="reset" aria-hidden="true">
+              <p class="mono reset-lbl">erasing all content and settings…</p>
+              <div class="reset-bar"><i></i></div>
+              <p class="mono reset-pc">0%</p>
+              <p class="reset-hello script">hello</p>
+            </div>
+          </div>
+          <h3 class="card-name">Viking</h3>
+          <p class="card-txt">The whole device, set adrift and set alight. Every photo, every note, every draft. Then the welcome screen, and you start again.</p>
+          <ul class="card-inc mono"><li>longship (refurbished, 64 GB)</li><li>flaming arrow, one attempt</li><li>"hello" in every language</li></ul>
+          <p class="card-price"><span class="mono">price</span> on request<small>it costs everything</small></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═════════════ 05 · OBITUARIES ═════════════ -->
+    <section class="obits" id="obits">
+      <header class="obits-hd">
+        <p class="mono">04 / recently departed</p>
+        <h2 class="obits-title">Obituaries</h2>
+        <p class="obits-sub mono"><span>vol. XVII</span><span id="obitsDate">…</span><span>price: one candle</span></p>
+      </header>
+
+      <div class="obits-grid">
+        <article class="obit" data-id="blog">
+          <div class="slot ht-img tiles" data-img="img/HOME/obit-blog.jpg" data-alt="A screenshot of an old personal blog" data-ratio="4/5"><div class="ph"><b>midnight-thoughts</b><i>img/HOME/obit-blog.jpg</i></div></div>
+          <p class="obit-yrs mono">2008 — 2013</p>
+          <h3 class="obit-name">midnight-thoughts<span>.blog</span></h3>
+          <p class="obit-txt">Beloved blog of a fourteen-year-old with a lot of feelings and one song on autoplay. Posted 1,312 times, mostly at night, mostly about him. Survived by three followers, one of them a bot.</p>
+          <p class="obit-lieu serif"><i>In lieu of flowers, please don't search for it.</i></p>
+          <button class="candle" type="button"><span class="flame" aria-hidden="true"></span><span class="mono">light a candle · <b>0</b></span></button>
+        </article>
+
+        <article class="obit" data-id="chat">
+          <div class="slot ht-img tiles" data-img="img/HOME/obit-chat.jpg" data-alt="A muted group chat icon" data-ratio="4/5"><div class="ph"><b>girls trip 2019</b><i>img/HOME/obit-chat.jpg</i></div></div>
+          <p class="obit-yrs mono">mar 2019 — apr 2019</p>
+          <h3 class="obit-name">"girls trip 2019 🌴"</h3>
+          <p class="obit-txt">Created with great hope on a Tuesday. Planned four trips and took none. Peacefully muted by all eleven members. Her last words: <i>"so are we doing this or"</i>.</p>
+          <p class="obit-lieu serif"><i>She leaves behind 214 unread messages and a shared album nobody opened.</i></p>
+          <button class="candle" type="button"><span class="flame" aria-hidden="true"></span><span class="mono">light a candle · <b>0</b></span></button>
+        </article>
+
+        <article class="obit" data-id="save">
+          <div class="slot ht-img tiles fit" data-img="img/HOME/obit-save.jpg" data-alt="A corrupted save file screen" data-ratio="4/5"><div class="ph"><b>save file 03</b><i>img/HOME/obit-save.jpg</i></div></div>
+          <p class="obit-yrs mono">2004 — 2006 · 112 h 40 m</p>
+          <h3 class="obit-name">SAVE FILE 03</h3>
+          <p class="obit-txt">A level 64 ranger, a house by the lake and a horse called Pancake. Lost when a little brother pressed NEW GAME. He has since been forgiven. Not really.</p>
+          <p class="obit-lieu serif"><i>Pancake is survived by no one. Pancake was the best horse.</i></p>
+          <button class="candle" type="button"><span class="flame" aria-hidden="true"></span><span class="mono">light a candle · <b>0</b></span></button>
+        </article>
+
+        <article class="obit" data-id="pet">
+          <div class="slot ht-img tiles" data-img="img/HOME/obit-pet.jpg" data-alt="A tiny pixel pet on a toy screen" data-ratio="4/5"><div class="ph"><b>biscuit</b><i>img/HOME/obit-pet.jpg</i></div></div>
+          <p class="obit-yrs mono">friday — monday, 2001</p>
+          <h3 class="obit-name">Biscuit</h3>
+          <p class="obit-txt">A virtual pet. Fed, cleaned, loved and then forgotten in a school bag over one long weekend. Biscuit asked for so little. Mostly snacks. Sometimes a game.</p>
+          <p class="obit-lieu serif"><i>Biscuit was three days old, which is ninety in pet years.</i></p>
+          <button class="candle" type="button"><span class="flame" aria-hidden="true"></span><span class="mono">light a candle · <b>0</b></span></button>
+        </article>
+      </div>
+
+      <a class="obits-more" href="obituaries.html"><span>Read all the obituaries</span><i aria-hidden="true">→</i></a>
+    </section>
+
+    <!-- ═════════════ 06 · A MOMENT OF SILENCE ═════════════ -->
+    <section class="silence" id="silence">
+      <canvas class="silence-ecg" id="silenceEcg" aria-hidden="true"></canvas>
+      <p class="sec-no mono">05 / a moment of silence</p>
+      <h2 class="silence-title">Please observe<br><i class="serif">a moment of silence.</i></h2>
+
+      <button class="hold" id="hold" type="button" aria-describedby="holdHint">
+        <svg class="hold-ring" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="56"/><circle class="hold-prog" cx="60" cy="60" r="56"/></svg>
+        <span class="hold-lbl"><b>hold</b><span class="mono">to pay respects</span></span>
+      </button>
+      <p class="silence-hint mono" id="holdHint">press and hold for five seconds · or press <kbd>F</kbd></p>
+      <p class="silence-done mono" id="silenceDone" aria-live="polite">respects paid today: <b id="respects">0</b></p>
+    </section>
+
+    <!-- ═════════════ 07 · THE HOUSE · directors ═════════════ -->
+    <section class="house" id="house">
+      <header class="sec-hd">
+        <p class="sec-no mono">06 / the house</p>
+        <h2 class="sec-title">The Vale <i class="serif">family</i></h2>
+        <p class="sec-note mono"><span>family owned since 2009</span><span>three generations of quiet</span></p>
+      </header>
+
+      <div class="house-grid">
+        <article class="dir">
+          <div class="dir-frame"><div class="slot ht-img" data-img="img/HOME/dir-vera.jpg" data-alt="Vera Vale, funeral director, in black lace with long silver nails" data-ratio="3/4"><div class="ph"><b>vera</b><i>img/HOME/dir-vera.jpg</i></div></div></div>
+          <p class="dir-role mono">funeral director</p>
+          <h3 class="dir-name">Vera Vale</h3>
+          <p class="dir-txt">Has buried forty thousand accounts and never once made a joke about the cloud. Still wears the nails she had done for her own profile's funeral in 2008. Nobody asks.</p>
+        </article>
+        <article class="dir">
+          <div class="dir-frame"><div class="slot ht-img" data-img="img/HOME/dir-dez.jpg" data-alt="Dez Vale, restorer, grinning at a party" data-ratio="3/4"><div class="ph"><b>dez</b><i>img/HOME/dir-dez.jpg</i></div></div></div>
+          <p class="dir-role mono">restorer of the deceased</p>
+          <h3 class="dir-name">Dez Vale</h3>
+          <p class="dir-txt">Her nephew. Can rebuild a profile picture from three pixels and a vague description. Does the eulogies and the playlist. Has been asked, many times, to stop doing that in photos.</p>
+        </article>
+        <article class="dir dir--crow">
+          <button class="crow" id="crow" type="button" aria-label="Cache the crow">
+            <span class="slot cut" data-img="img/HOME/crow.webp" data-alt="Cache, a black crow"><span class="ph"><b>cache</b><i>img/HOME/crow.webp</i></span></span>
+            <span class="crow-say mono" id="crowSay">caw.</span>
+          </button>
+          <p class="dir-role mono">security · lost &amp; found</p>
+          <h3 class="dir-name">Cache</h3>
+          <p class="dir-txt">The crow. Collects dead USB sticks and anything shiny left in the chapel. Once bit a tech CEO at a memorial. Was not asked to apologise.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ═════════════ 08 · FLORIST ═════════════ -->
+    <section class="flor" id="florist">
+      <header class="sec-hd">
+        <p class="sec-no mono">07 / florist</p>
+        <h2 class="sec-title">Say it <i class="serif">with lilies</i></h2>
+        <p class="sec-note mono"><span>same-day delivery</span><span>to any inbox</span></p>
+      </header>
+      <div class="flor-row">
+        <a class="bq" href="florist.html"><span class="slot cut" data-img="img/HOME/flor-unfollow.webp" data-alt="A white lily"><span class="ph"><b>the unfollow</b><i>img/HOME/flor-unfollow.webp</i></span></span><b class="bq-name">The Unfollow</b><span class="bq-p mono">one white lily · $29</span></a>
+        <a class="bq" href="florist.html"><span class="slot cut" data-img="img/HOME/flor-seen.webp" data-alt="A black rose"><span class="ph"><b>seen 3:12 am</b><i>img/HOME/flor-seen.webp</i></span></span><b class="bq-name">Seen 3:12 AM</b><span class="bq-p mono">one black rose · $44</span></a>
+        <a class="bq" href="florist.html"><span class="slot cut" data-img="img/HOME/flor-offline.webp" data-alt="A lilac peony"><span class="ph"><b>forever offline</b><i>img/HOME/flor-offline.webp</i></span></span><b class="bq-name">Forever Offline</b><span class="bq-p mono">lilac peony, xl · $88</span></a>
+        <a class="bq" href="florist.html"><span class="slot cut" data-img="img/HOME/flor-battery.webp" data-alt="A single dried-out flower"><span class="ph"><b>low battery</b><i>img/HOME/flor-battery.webp</i></span></span><b class="bq-name">Low Battery</b><span class="bq-p mono">one dried-out bloom · $1</span></a>
+      </div>
+    </section>
+
+    <!-- ═════════════ 09 · GUESTBOOK · the conversation ═════════════ -->
+    <section class="gb" id="guestbook">
+      <div class="gb-copy">
+        <p class="sec-no mono">08 / guestbook</p>
+        <h2 class="sec-title">Leave a <i class="serif">message</i></h2>
+        <p class="gb-txt">Sign the book for anyone, or anything, you've lost. Emoticons are welcome. Nudges are tolerated.</p>
+        <a class="btn btn--ink" href="guestbook.html"><span>Sign the guestbook</span><i aria-hidden="true">→</i></a>
+      </div>
+
+      <div class="win" id="gbWin">
+        <div class="win-bar"><span class="win-ico" aria-hidden="true">✿</span><span class="win-t">Guestbook — Conversation</span><span class="win-btns" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span></div>
+        <div class="win-to mono">To: <b>midnight-thoughts.blog</b> &lt;offline&gt;</div>
+        <div class="win-log" id="gbLog" aria-live="polite"></div>
+        <div class="win-typing mono" id="gbTyping"><i></i><i></i><i></i> <span>someone is typing…</span></div>
+        <div class="win-tools">
+          <button class="win-nudge" id="gbNudge" type="button">⚡ nudge</button>
+          <span class="mono">a nudge has been sent to the deceased</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════════ 10 · PLAN · the headstone ═════════════ -->
+    <section class="plan" id="plan">
+      <div class="plan-copy">
+        <p class="sec-no mono">09 / plan a funeral</p>
+        <h2 class="plan-title">Every file<br>deserves a <em class="script">goodbye.</em></h2>
+        <form class="plan-form" id="planForm" autocomplete="off">
+          <label class="fld"><span class="mono">what did you lose?</span><input id="pName" type="text" maxlength="34" value="my first profile"></label>
+          <div class="fld-row">
+            <label class="fld"><span class="mono">born</span><input id="pFrom" type="number" min="1990" max="2026" value="2009"></label>
+            <label class="fld"><span class="mono">departed</span><input id="pTo" type="number" min="1990" max="2026" value="2014"></label>
+          </div>
+          <fieldset class="chips"><legend class="mono">epitaph</legend>
+            <label><input type="radio" name="ep" value="gone but cached" checked><span>gone but cached</span></label>
+            <label><input type="radio" name="ep" value="rest in pixels"><span>rest in pixels</span></label>
+            <label><input type="radio" name="ep" value="it was a vibe"><span>it was a vibe</span></label>
+            <label><input type="radio" name="ep" value="never backed up"><span>never backed up</span></label>
+          </fieldset>
+          <button class="btn btn--ink" type="submit"><span>Plan the full service</span><i aria-hidden="true">→</i></button>
+        </form>
+      </div>
+
+      <div class="stone-wrap">
+        <div class="stone" id="stone">
+          <p class="stone-cross" aria-hidden="true">✝</p>
+          <p class="stone-here mono">here lies</p>
+          <p class="stone-name" id="sName">my first profile</p>
+          <p class="stone-yrs mono" id="sYrs">2009 — 2014</p>
+          <p class="stone-ep script" id="sEp">gone but cached</p>
+          <i class="stone-moss" aria-hidden="true"></i>
+        </div>
+        <p class="stone-cap mono">preview · engraved by hand, rendered in CSS</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═════════════ FOOTER ═════════════ -->
+  <footer class="ftr">
+    <p class="ftr-big" aria-label="We never log off"><span>WE NEVER</span><span>LOG OFF.</span></p>
+    <div class="ftr-grid">
+      <div>
+        <p class="ftr-logo">DEAD<b>AIR</b></p>
+        <p class="ftr-small">Funeral directors for the digitally deceased.<br>404 Lilac Lane · Server Room B<br>Open 24/7. Grief keeps no office hours.<br>☏ 1-800-RIP-DATA</p>
+      </div>
+      <nav class="ftr-nav" aria-label="Footer">
+        <a href="services.html">Services</a><a href="obituaries.html">Obituaries</a><a href="plan.html">Plan a Funeral</a><a href="florist.html">Florist</a><a href="guestbook.html">Guestbook</a><a href="grief.html">Grief Support</a>
+      </nav>
+      <div class="ftr-sign">
+        <p class="mono">concept, design &amp; code</p>
+        <p class="script">ghostly.grl ♥</p>
+        <p class="mono ftr-tiny">a fictional funeral home · © 2026</p>
+      </div>
+    </div>
+  </footer>
+
+  <i class="dead-px" id="deadPx" aria-hidden="true"></i>
+  <div class="cursor" id="cursor" aria-hidden="true"><i></i><span class="mono" id="cursorLbl"></span></div>
+  <div class="toast mono" id="toast" role="status" aria-live="polite"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="js/main.js?v=20261010-1"></script>
+  <script src="js/eggs.js?v=20261010-1"></script>
+  <script src="js/home.js?v=20261010-1"></script>
+</body>
+  <!--
+   *    /\_/\      +
+       ( o.o )   <3  ghostly.grl
+   +    > ^ <          *
+-->
+</html>

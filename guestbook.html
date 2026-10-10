@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guestbook — DEAD AIR</title>
+  <meta name="description" content="Sign the guestbook for anyone, or anything, you lost online, and send a message to the departed on a messenger where everyone is offline.">
+  <meta name="theme-color" content="#0b0b0c">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Pinyon+Script&family=Silkscreen&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20261010-1">
+  <link rel="stylesheet" href="css/guestbook.css?v=20261010-1">
+</head>
+<body class="is-loading" data-page="guestbook">
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- ═════════════ WIPE · loader on the home, page transition everywhere ═════════════ -->
+  <div class="wipe" id="wipe" aria-hidden="true">
+    <div class="wipe-half wipe-half--t"></div>
+    <div class="wipe-half wipe-half--b"></div>
+    <div class="wipe-in">
+      <p class="wipe-logo">DEAD<span>AIR</span></p>
+      <canvas class="wipe-ecg" id="wipeEcg"></canvas>
+      <div class="wipe-row mono">
+        <span id="wipeMsg">lowering the lights</span>
+        <span id="wipeCount">000</span>
+      </div>
+      <div class="wipe-bar"><i id="wipeBar"></i></div>
+      <p class="wipe-sub mono">funeral directors for the digitally deceased · est. 2009</p>
+    </div>
+  </div>
+
+  <!-- ═════════════ HEADER ═════════════ -->
+  <header class="hdr" id="hdr">
+    <a class="logo" href="index.html" aria-label="Dead Air, home">
+      <svg class="logo-mark" viewBox="0 0 64 32" aria-hidden="true"><path d="M2 18h14l4-10 6 20 5-26 5 16h26" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="logo-txt">DEAD<b>AIR</b></span>
+    </a>
+
+    <nav class="nav" aria-label="Main">
+      <a href="services.html"><span class="nl" data-t="Services">Services</span></a>
+      <a href="obituaries.html"><span class="nl" data-t="Obituaries">Obituaries</span></a>
+      <a href="plan.html"><span class="nl" data-t="Plan a Funeral">Plan a Funeral</span></a>
+      <a href="florist.html"><span class="nl" data-t="Florist">Florist</span></a>
+      <a href="guestbook.html"><span class="nl" data-t="Guestbook">Guestbook</span></a>
+      <a href="grief.html"><span class="nl" data-t="Grief Support">Grief Support</span></a>
+    </nav>
+
+    <div class="hdr-r">
+      <button class="organ" id="organ" type="button" aria-pressed="false" title="Chapel organ">
+        <span class="organ-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span class="organ-lbl mono">organ <b>off</b></span>
+      </button>
+      <a class="hdr-cta" href="plan.html">Plan a funeral</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu"><span>Menu</span><i aria-hidden="true"></i></button>
+    </div>
+  </header>
+
+  <!-- ═════════════ MENU · phones and tablets ═════════════ -->
+  <div class="menu" id="menu" aria-hidden="true">
+    <nav class="menu-list" aria-label="Menu">
+      <a href="index.html"><i>00</i><b>Home</b></a>
+      <a href="services.html"><i>01</i><b>Services</b></a>
+      <a href="obituaries.html"><i>02</i><b>Obituaries</b></a>
+      <a href="plan.html"><i>03</i><b>Plan a Funeral</b></a>
+      <a href="florist.html"><i>04</i><b>Florist</b></a>
+      <a href="guestbook.html"><i>05</i><b>Guestbook</b></a>
+      <a href="grief.html"><i>06</i><b>Grief Support</b></a>
+    </nav>
+    <div class="menu-foot mono"><span>404 Lilac Lane · Server Room B</span><span>open 24/7 · we never log off</span><span>☏ 1-800-RIP-DATA</span></div>
+  </div>
+
+  <main id="main">
+
+    <!-- ═════════════ 01 · THE BOOK ═════════════ -->
+    <section class="gk" id="book">
+      <header class="gk-hd">
+        <p class="gk-meta mono"><span>⌖ the guestbook · volume <b>17</b></span><span>pen provided · tears optional</span><span id="gkCount">…</span></p>
+        <h1 class="gk-title"><span data-split>GUEST</span><span data-split>BOOK</span></h1>
+        <p class="gk-sub serif">Sign it for anyone, or anything, <i>you've lost.</i></p>
+      </header>
+
+      <div class="book-wrap">
+        <div class="book" id="bookEl">
+          <div class="page page--l" id="pgL"></div>
+          <div class="page page--r" id="pgR"></div>
+          <i class="spine" aria-hidden="true"></i>
+        </div>
+        <div class="book-nav mono">
+          <button type="button" id="bkPrev">← previous page</button>
+          <span id="bkPage">pages 1–2</span>
+          <button type="button" id="bkNext">next page →</button>
+        </div>
+      </div>
+
+      <form class="sign" id="sign" autocomplete="off">
+        <p class="sign-h mono">sign the book</p>
+        <div class="sign-row">
+          <label class="fld"><span class="mono">your name</span><input name="name" maxlength="28" placeholder="whatever you were called then" required></label>
+          <label class="fld"><span class="mono">for</span>
+            <select name="for">
+              <option>midnight-thoughts.blog</option><option>"girls trip 2019 🌴"</option><option>jess's first profile</option><option>SAVE FILE 03</option><option>Biscuit</option><option>the phone left in a taxi</option><option>the drafts folder</option><option value="">someone else…</option>
+            </select>
+          </label>
+        </div>
+        <label class="fld"><span class="mono">your message</span><textarea name="msg" maxlength="160" rows="2" placeholder="you were there when nobody else was" required></textarea></label>
+        <button class="btn btn--ink" type="submit"><span>Sign</span><i aria-hidden="true">✒</i></button>
+      </form>
+    </section>
+
+    <!-- ═════════════ 02 · THE MESSENGER ═════════════ -->
+    <section class="ms" id="messenger">
+      <header class="ms-hd">
+        <p class="mono">02 / still in your contacts</p>
+        <h2 class="ms-title">Message <i class="serif">the departed</i></h2>
+        <p class="ms-sub">They're all offline. Your messages will be delivered when they sign in. They won't sign in. Write anyway.</p>
+      </header>
+
+      <div class="msn" id="msn">
+        <div class="msn-bar"><span class="msn-logo" aria-hidden="true">✿</span><span class="msn-t">Dead Air Messenger</span><span class="msn-btns" aria-hidden="true"><i>_</i><i>□</i><i>×</i></span></div>
+        <div class="msn-body">
+          <aside class="msn-side">
+            <div class="me">
+              <span class="me-pic" aria-hidden="true">♡</span>
+              <div><b>you</b><small class="mono">(online) ▾</small><em>♪ listening to: the rain</em></div>
+            </div>
+            <p class="grp mono">▾ offline (<span id="cntN">6</span>)</p>
+            <ul class="contacts" id="contacts"><!-- from js/guestbook.js --></ul>
+            <p class="msn-ad mono">⌖ sponsored · plan a funeral for $0 · <a href="plan.html">click here</a></p>
+          </aside>
+
+          <div class="chat">
+            <div class="chat-to"><span class="chat-pic slot ht-img" id="chatPic" data-ratio="1/1"><span class="ph"><b>·</b></span></span><div><b id="chatName">—</b><small id="chatStatus">—</small><em id="chatPm">—</em></div></div>
+            <div class="chat-log" id="chatLog" aria-live="polite"></div>
+            <div class="chat-typing mono" id="chatTyping"><i></i><i></i><i></i> <span></span></div>
+            <div class="chat-tools">
+              <button type="button" class="emo-btn" id="emoBtn" aria-expanded="false" aria-controls="emoGrid" title="Emoticons">☺ ▾</button>
+              <button type="button" id="nudgeBtn" title="Send a nudge">⚡ nudge</button>
+              <span class="mono chat-hint">emoticons: (L) (F) :'( (U) (K) (S) (*) :)</span>
+            </div>
+            <div class="emo-grid" id="emoGrid" hidden></div>
+            <form class="chat-form" id="chatForm" autocomplete="off">
+              <textarea id="chatIn" maxlength="300" rows="2" placeholder="say something. they can't hear you, but say it."></textarea>
+              <button type="submit">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════════ 03 · THE NUMBERS ═════════════ -->
+    <section class="gnum">
+      <div><b class="count" id="nSig">0</b><span class="mono">signatures in the book</span></div>
+      <div><b class="count" id="nMsg">0</b><span class="mono">messages to the offline</span></div>
+      <div><b class="count" id="nNudge">0</b><span class="mono">nudges, unanswered</span></div>
+      <div><b class="count" id="nCandle">0</b><span class="mono">candles still burning</span></div>
+      <p class="gnum-cta"><span class="serif">Not okay?</span> <a class="btn btn--ink" href="grief.html"><span>Grief support</span><i aria-hidden="true">→</i></a></p>
+    </section>
+
+  </main>
+
+  <!-- ═════════════ FOOTER ═════════════ -->
+  <footer class="ftr">
+    <p class="ftr-big" aria-label="We never log off"><span>WE NEVER</span><span>LOG OFF.</span></p>
+    <div class="ftr-grid">
+      <div>
+        <p class="ftr-logo">DEAD<b>AIR</b></p>
+        <p class="ftr-small">Funeral directors for the digitally deceased.<br>404 Lilac Lane · Server Room B<br>Open 24/7. Grief keeps no office hours.<br>☏ 1-800-RIP-DATA</p>
+      </div>
+      <nav class="ftr-nav" aria-label="Footer">
+        <a href="services.html">Services</a><a href="obituaries.html">Obituaries</a><a href="plan.html">Plan a Funeral</a><a href="florist.html">Florist</a><a href="guestbook.html">Guestbook</a><a href="grief.html">Grief Support</a>
+      </nav>
+      <div class="ftr-sign">
+        <p class="mono">concept, design &amp; code</p>
+        <p class="script">ghostly.grl ♥</p>
+        <p class="mono ftr-tiny">a fictional funeral home · © 2026</p>
+      </div>
+    </div>
+  </footer>
+
+  <i class="dead-px" id="deadPx" aria-hidden="true"></i>
+  <div class="cursor" id="cursor" aria-hidden="true"><i></i><span class="mono" id="cursorLbl"></span></div>
+  <div class="toast mono" id="toast" role="status" aria-live="polite"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="js/main.js?v=20261010-1"></script>
+  <script src="js/eggs.js?v=20261010-1"></script>
+  <script src="js/guestbook.js?v=20261010-1"></script>
+</body>
+  <!--
+   *    /\_/\      +
+       ( o.o )   <3  ghostly.grl
+   +    > ^ <          *
+-->
+</html>

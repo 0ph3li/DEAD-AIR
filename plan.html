@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plan a Funeral — DEAD AIR</title>
+  <meta name="description" content="Arrange a funeral for something you lost online: the service, the room, the casket, the music and the flowers, with a printed program and a date in your calendar.">
+  <meta name="theme-color" content="#0b0b0c">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Pinyon+Script&family=Silkscreen&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20261010-1">
+  <link rel="stylesheet" href="css/plan.css?v=20261010-1">
+</head>
+<body class="is-loading" data-page="plan">
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- ═════════════ WIPE · loader on the home, page transition everywhere ═════════════ -->
+  <div class="wipe" id="wipe" aria-hidden="true">
+    <div class="wipe-half wipe-half--t"></div>
+    <div class="wipe-half wipe-half--b"></div>
+    <div class="wipe-in">
+      <p class="wipe-logo">DEAD<span>AIR</span></p>
+      <canvas class="wipe-ecg" id="wipeEcg"></canvas>
+      <div class="wipe-row mono">
+        <span id="wipeMsg">lowering the lights</span>
+        <span id="wipeCount">000</span>
+      </div>
+      <div class="wipe-bar"><i id="wipeBar"></i></div>
+      <p class="wipe-sub mono">funeral directors for the digitally deceased · est. 2009</p>
+    </div>
+  </div>
+
+  <!-- ═════════════ HEADER ═════════════ -->
+  <header class="hdr" id="hdr">
+    <a class="logo" href="index.html" aria-label="Dead Air, home">
+      <svg class="logo-mark" viewBox="0 0 64 32" aria-hidden="true"><path d="M2 18h14l4-10 6 20 5-26 5 16h26" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="logo-txt">DEAD<b>AIR</b></span>
+    </a>
+
+    <nav class="nav" aria-label="Main">
+      <a href="services.html"><span class="nl" data-t="Services">Services</span></a>
+      <a href="obituaries.html"><span class="nl" data-t="Obituaries">Obituaries</span></a>
+      <a href="plan.html"><span class="nl" data-t="Plan a Funeral">Plan a Funeral</span></a>
+      <a href="florist.html"><span class="nl" data-t="Florist">Florist</span></a>
+      <a href="guestbook.html"><span class="nl" data-t="Guestbook">Guestbook</span></a>
+      <a href="grief.html"><span class="nl" data-t="Grief Support">Grief Support</span></a>
+    </nav>
+
+    <div class="hdr-r">
+      <button class="organ" id="organ" type="button" aria-pressed="false" title="Chapel organ">
+        <span class="organ-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span class="organ-lbl mono">organ <b>off</b></span>
+      </button>
+      <a class="hdr-cta" href="plan.html">Plan a funeral</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu"><span>Menu</span><i aria-hidden="true"></i></button>
+    </div>
+  </header>
+
+  <!-- ═════════════ MENU · phones and tablets ═════════════ -->
+  <div class="menu" id="menu" aria-hidden="true">
+    <nav class="menu-list" aria-label="Menu">
+      <a href="index.html"><i>00</i><b>Home</b></a>
+      <a href="services.html"><i>01</i><b>Services</b></a>
+      <a href="obituaries.html"><i>02</i><b>Obituaries</b></a>
+      <a href="plan.html"><i>03</i><b>Plan a Funeral</b></a>
+      <a href="florist.html"><i>04</i><b>Florist</b></a>
+      <a href="guestbook.html"><i>05</i><b>Guestbook</b></a>
+      <a href="grief.html"><i>06</i><b>Grief Support</b></a>
+    </nav>
+    <div class="menu-foot mono"><span>404 Lilac Lane · Server Room B</span><span>open 24/7 · we never log off</span><span>☏ 1-800-RIP-DATA</span></div>
+  </div>
+
+  <main id="main">
+
+    <section class="pl" id="plan">
+      <header class="pl-hd">
+        <p class="pl-meta mono"><span>⌖ form DA/PF-<b id="plRef">0000</b></span><span>arrangements are free · grief is not</span><span id="plToday">…</span></p>
+        <h1 class="pl-title"><span data-split>PLAN A</span><span data-split>FUNERAL</span></h1>
+        <p class="pl-sub script">goodbye, properly.</p>
+      </header>
+
+      <ol class="pl-steps mono" id="plSteps" aria-label="Steps">
+        <li><button type="button" data-go="0"><i>01</i>the deceased</button></li>
+        <li><button type="button" data-go="1"><i>02</i>the service</button></li>
+        <li><button type="button" data-go="2"><i>03</i>where &amp; when</button></li>
+        <li><button type="button" data-go="3"><i>04</i>the details</button></li>
+        <li><button type="button" data-go="4"><i>05</i>extras</button></li>
+        <li><button type="button" data-go="5"><i>06</i>review</button></li>
+      </ol>
+      <div class="pl-bar"><i id="plBar"></i></div>
+
+      <div class="pl-grid">
+        <form class="pl-form" id="plForm" autocomplete="off" novalidate>
+
+          <!-- 01 · the deceased -->
+          <fieldset class="st" data-step="0">
+            <legend class="st-q">Who are we saying <i class="serif">goodbye to?</i></legend>
+            <label class="fld"><span class="mono">the deceased</span><input name="name" maxlength="34" placeholder="my first profile" required></label>
+            <div class="fld-row">
+              <label class="fld"><span class="mono">born</span><input name="from" type="number" min="1990" max="2026" placeholder="2009"></label>
+              <label class="fld"><span class="mono">departed</span><input name="to" type="number" min="1990" max="2026" placeholder="2014"></label>
+              <label class="fld"><span class="mono">kind</span>
+                <select name="kind"><option>profile</option><option>group chat</option><option>blog</option><option>forum</option><option>save file</option><option>virtual pet</option><option>phone</option><option>playlist</option><option>something else</option></select>
+              </label>
+            </div>
+            <fieldset class="chips"><legend class="mono">epitaph</legend>
+              <label><input type="radio" name="ep" value="gone but cached"><span>gone but cached</span></label>
+              <label><input type="radio" name="ep" value="rest in pixels"><span>rest in pixels</span></label>
+              <label><input type="radio" name="ep" value="it was a vibe"><span>it was a vibe</span></label>
+              <label><input type="radio" name="ep" value="never backed up"><span>never backed up</span></label>
+              <label><input type="radio" name="ep" value="brb"><span>brb</span></label>
+            </fieldset>
+            <p class="st-err mono" id="errName" role="alert"></p>
+          </fieldset>
+
+          <!-- 02 · the service -->
+          <fieldset class="st" data-step="1" hidden>
+            <legend class="st-q">How do they <i class="serif">go?</i></legend>
+            <div class="svc-pick">
+              <label class="sp"><input type="radio" name="service" value="cremation"><span class="sp-in">
+                <span class="sp-ico" aria-hidden="true">△</span><b>Cremation</b><span class="mono">= permanent delete</span><span class="sp-p serif">$0</span></span></label>
+              <label class="sp"><input type="radio" name="service" value="burial"><span class="sp-in">
+                <span class="sp-ico" aria-hidden="true">✝</span><b>Burial</b><span class="mono">= archive</span><span class="sp-p serif">$4.99<small>/mo</small></span></span></label>
+              <label class="sp"><input type="radio" name="service" value="viking"><span class="sp-in">
+                <span class="sp-ico" aria-hidden="true">≋</span><b>Viking</b><span class="mono">= factory reset</span><span class="sp-p serif">on request</span></span></label>
+            </div>
+            <p class="st-note mono">not sure? <a href="services.html#which">take the three questions</a></p>
+          </fieldset>
+
+          <!-- 03 · where & when -->
+          <fieldset class="st" data-step="2" hidden>
+            <legend class="st-q">Where and <i class="serif">when?</i></legend>
+            <fieldset class="rooms"><legend class="mono">the room</legend>
+              <label><input type="radio" name="room" value="Chapel A"><span><b>Chapel A</b><small>40 seats · lilies</small></span></label>
+              <label><input type="radio" name="room" value="Chapel B"><span><b>Chapel B</b><small>12 seats · dim</small></span></label>
+              <label><input type="radio" name="room" value="The Garden"><span><b>The Garden</b><small>open air · bring a coat</small></span></label>
+              <label><input type="radio" name="room" value="The Screening Room"><span><b>Screening Room</b><small>projector · popcorn</small></span></label>
+              <label><input type="radio" name="room" value="The Dock"><span><b>The Dock</b><small>vikings only</small></span></label>
+            </fieldset>
+            <div class="cal-wrap">
+              <p class="mono cal-lbl">the day <span id="calMonth"></span></p>
+              <div class="cal" id="cal" role="radiogroup" aria-label="Day"></div>
+              <p class="mono cal-lbl">the time <span class="cal-legend">· crossed out = another service</span></p>
+              <div class="times" id="times" role="radiogroup" aria-label="Time"></div>
+            </div>
+          </fieldset>
+
+          <!-- 04 · the details -->
+          <fieldset class="st" data-step="3" hidden>
+            <legend class="st-q">The <i class="serif">details</i></legend>
+
+            <fieldset class="caskets"><legend class="mono">the casket</legend>
+              <label><input type="radio" name="casket" value="window"><span><i class="cm cm--window"><em></em></i><b>The Window</b><small>classic · $0</small></span></label>
+              <label><input type="radio" name="casket" value="terminal"><span><i class="cm cm--terminal"><em></em></i><b>The Terminal</b><small>no frills · $0</small></span></label>
+              <label><input type="radio" name="casket" value="notification"><span><i class="cm cm--notification"><em></em></i><b>The Notification</b><small>one last ping · $15</small></span></label>
+              <label><input type="radio" name="casket" value="polaroid"><span><i class="cm cm--polaroid"><em></em></i><b>The Polaroid</b><small>shake it · $25</small></span></label>
+            </fieldset>
+
+            <fieldset class="music"><legend class="mono">the music</legend>
+              <label><input type="radio" name="music" value="organ"><span><b>Chapel organ</b><small>four slow chords</small></span><button type="button" class="play mono" data-play="organ">▶ listen</button></label>
+              <label><input type="radio" name="music" value="dialup"><span><b>Dial-up hymn</b><small>the sound of connecting, one last time</small></span><button type="button" class="play mono" data-play="dialup">▶ listen</button></label>
+              <label><input type="radio" name="music" value="ringtone"><span><b>An old ringtone, slowed down</b><small>you know the one</small></span><button type="button" class="play mono" data-play="ringtone">▶ listen</button></label>
+              <label><input type="radio" name="music" value="silence"><span><b>Dead air</b><small>three minutes of nothing</small></span><button type="button" class="play mono" data-play="silence">▶ listen</button></label>
+            </fieldset>
+
+            <fieldset class="flowers"><legend class="mono">the flowers</legend>
+              <label><input type="radio" name="flowers" value="unfollow"><span><i class="slot cut" data-img="img/HOME/flor-unfollow.webp"><i class="ph"><b>·</b></i></i><b>The Unfollow</b><small>$29</small></span></label>
+              <label><input type="radio" name="flowers" value="seen"><span><i class="slot cut" data-img="img/HOME/flor-seen.webp"><i class="ph"><b>·</b></i></i><b>Seen 3:12 AM</b><small>$44</small></span></label>
+              <label><input type="radio" name="flowers" value="offline"><span><i class="slot cut" data-img="img/HOME/flor-offline.webp"><i class="ph"><b>·</b></i></i><b>Forever Offline</b><small>$88</small></span></label>
+              <label><input type="radio" name="flowers" value="battery"><span><i class="slot cut" data-img="img/HOME/flor-battery.webp"><i class="ph"><b>·</b></i></i><b>Low Battery</b><small>$1</small></span></label>
+              <label><input type="radio" name="flowers" value="none"><span><i class="no-fl" aria-hidden="true">∅</i><b>No flowers</b><small>they'd want you to save</small></span></label>
+            </fieldset>
+          </fieldset>
+
+          <!-- 05 · extras -->
+          <fieldset class="st" data-step="4" hidden>
+            <legend class="st-q">Little <i class="serif">extras</i></legend>
+            <div class="xtra" id="xtra"><!-- from js/plan.js --></div>
+          </fieldset>
+
+          <!-- 06 · review -->
+          <fieldset class="st" data-step="5" hidden>
+            <legend class="st-q">Is everything <i class="serif">right?</i></legend>
+            <div class="rcpt" id="rcpt"><!-- from js/plan.js --></div>
+            <label class="consent"><input type="checkbox" name="sure" id="sure"><span>I understand that nothing will be recovered, restored or brought back. Not even if I ask nicely at 3 AM.</span></label>
+            <p class="st-err mono" id="errSure" role="alert"></p>
+          </fieldset>
+
+          <div class="pl-nav">
+            <button type="button" class="btn btn--line" id="plBack"><i aria-hidden="true">←</i><span>Back</span></button>
+            <button type="button" class="btn btn--ink" id="plNext"><span>Next</span><i aria-hidden="true">→</i></button>
+          </div>
+        </form>
+
+        <!-- the program, live -->
+        <aside class="prog-wrap" aria-label="Preview of the funeral program">
+          <article class="prog" id="prog">
+            <div class="pg-lily slot cut" data-img="img/HOME/hero-lily.webp" data-alt=""><div class="ph"><b>·</b></div></div>
+            <p class="pg-mem mono">in loving memory of</p>
+            <h2 class="pg-name" id="pgName">—</h2>
+            <p class="pg-yrs mono" id="pgYrs">? — ?</p>
+            <p class="pg-ep script" id="pgEp">gone but cached</p>
+
+            <div class="pg-casket" id="pgCasket" data-style="window"><span class="pgc-bar"><i></i><i></i><i></i></span><span class="pgc-name" id="pgCasketName">—</span></div>
+
+            <p class="pg-h mono">order of service</p>
+            <ol class="pg-order" id="pgOrder"></ol>
+
+            <div class="pg-foot">
+              <span class="pg-fl slot cut" id="pgFl"><span class="ph"><b>·</b></span></span>
+              <p class="mono"><b id="pgRoom">Chapel A</b><br><span id="pgDate">—</span> · <span id="pgTime">—</span></p>
+              <p class="pg-house mono">DEAD<b>AIR</b> · funeral directors<br>for the digitally deceased</p>
+            </div>
+          </article>
+          <p class="prog-cap mono">the program · updates as you go · printed on the day</p>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═════════════ BOOKED ═════════════ -->
+  <div class="booked" id="booked" role="dialog" aria-modal="true" aria-labelledby="bkTitle" hidden>
+    <canvas class="bk-ecg" id="bkEcg" aria-hidden="true"></canvas>
+    <div class="bk-in">
+      <p class="mono bk-no">booking Nº <b id="bkNo">—</b></p>
+      <h2 class="bk-title" id="bkTitle">The service <i class="serif">is booked.</i></h2>
+      <p class="bk-sub serif" id="bkSub">—</p>
+      <div class="bk-printer" aria-hidden="true"><i class="bk-slit"></i><div class="bk-paper" id="bkPaper"></div></div>
+      <div class="bk-act">
+        <button type="button" class="btn btn--light" id="bkPrint"><span>Print the program</span><i aria-hidden="true">⎙</i></button>
+        <button type="button" class="btn btn--line" id="bkIcs"><span>Add to calendar</span><i aria-hidden="true">↓</i></button>
+        <a class="btn btn--line" href="guestbook.html"><span>Sign the guestbook</span><i aria-hidden="true">→</i></a>
+        <button type="button" class="bk-again mono" id="bkAgain">plan another goodbye</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═════════════ FOOTER ═════════════ -->
+  <footer class="ftr">
+    <p class="ftr-big" aria-label="We never log off"><span>WE NEVER</span><span>LOG OFF.</span></p>
+    <div class="ftr-grid">
+      <div>
+        <p class="ftr-logo">DEAD<b>AIR</b></p>
+        <p class="ftr-small">Funeral directors for the digitally deceased.<br>404 Lilac Lane · Server Room B<br>Open 24/7. Grief keeps no office hours.<br>☏ 1-800-RIP-DATA</p>
+      </div>
+      <nav class="ftr-nav" aria-label="Footer">
+        <a href="services.html">Services</a><a href="obituaries.html">Obituaries</a><a href="plan.html">Plan a Funeral</a><a href="florist.html">Florist</a><a href="guestbook.html">Guestbook</a><a href="grief.html">Grief Support</a>
+      </nav>
+      <div class="ftr-sign">
+        <p class="mono">concept, design &amp; code</p>
+        <p class="script">ghostly.grl ♥</p>
+        <p class="mono ftr-tiny">a fictional funeral home · © 2026</p>
+      </div>
+    </div>
+  </footer>
+
+  <i class="dead-px" id="deadPx" aria-hidden="true"></i>
+  <div class="cursor" id="cursor" aria-hidden="true"><i></i><span class="mono" id="cursorLbl"></span></div>
+  <div class="toast mono" id="toast" role="status" aria-live="polite"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="js/main.js?v=20261010-1"></script>
+  <script src="js/eggs.js?v=20261010-1"></script>
+  <script src="js/plan.js?v=20261010-1"></script>
+</body>
+  <!--
+   *    /\_/\      +
+       ( o.o )   <3  ghostly.grl
+   +    > ^ <          *
+-->
+</html>

@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Florist — DEAD AIR</title>
+  <meta name="description" content="Funeral flowers for the digitally deceased: the language of flowers, updated, ready-made arrangements, and a bouquet you arrange yourself and send to any inbox, even a deleted one.">
+  <meta name="theme-color" content="#0b0b0c">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=Pinyon+Script&family=Silkscreen&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20261010-1">
+  <link rel="stylesheet" href="css/florist.css?v=20261010-1">
+</head>
+<body class="is-loading" data-page="florist">
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- ═════════════ WIPE · loader on the home, page transition everywhere ═════════════ -->
+  <div class="wipe" id="wipe" aria-hidden="true">
+    <div class="wipe-half wipe-half--t"></div>
+    <div class="wipe-half wipe-half--b"></div>
+    <div class="wipe-in">
+      <p class="wipe-logo">DEAD<span>AIR</span></p>
+      <canvas class="wipe-ecg" id="wipeEcg"></canvas>
+      <div class="wipe-row mono">
+        <span id="wipeMsg">lowering the lights</span>
+        <span id="wipeCount">000</span>
+      </div>
+      <div class="wipe-bar"><i id="wipeBar"></i></div>
+      <p class="wipe-sub mono">funeral directors for the digitally deceased · est. 2009</p>
+    </div>
+  </div>
+
+  <!-- ═════════════ HEADER ═════════════ -->
+  <header class="hdr" id="hdr">
+    <a class="logo" href="index.html" aria-label="Dead Air, home">
+      <svg class="logo-mark" viewBox="0 0 64 32" aria-hidden="true"><path d="M2 18h14l4-10 6 20 5-26 5 16h26" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="logo-txt">DEAD<b>AIR</b></span>
+    </a>
+
+    <nav class="nav" aria-label="Main">
+      <a href="services.html"><span class="nl" data-t="Services">Services</span></a>
+      <a href="obituaries.html"><span class="nl" data-t="Obituaries">Obituaries</span></a>
+      <a href="plan.html"><span class="nl" data-t="Plan a Funeral">Plan a Funeral</span></a>
+      <a href="florist.html"><span class="nl" data-t="Florist">Florist</span></a>
+      <a href="guestbook.html"><span class="nl" data-t="Guestbook">Guestbook</span></a>
+      <a href="grief.html"><span class="nl" data-t="Grief Support">Grief Support</span></a>
+    </nav>
+
+    <div class="hdr-r">
+      <button class="organ" id="organ" type="button" aria-pressed="false" title="Chapel organ">
+        <span class="organ-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span class="organ-lbl mono">organ <b>off</b></span>
+      </button>
+      <a class="hdr-cta" href="plan.html">Plan a funeral</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu"><span>Menu</span><i aria-hidden="true"></i></button>
+    </div>
+  </header>
+
+  <!-- ═════════════ MENU · phones and tablets ═════════════ -->
+  <div class="menu" id="menu" aria-hidden="true">
+    <nav class="menu-list" aria-label="Menu">
+      <a href="index.html"><i>00</i><b>Home</b></a>
+      <a href="services.html"><i>01</i><b>Services</b></a>
+      <a href="obituaries.html"><i>02</i><b>Obituaries</b></a>
+      <a href="plan.html"><i>03</i><b>Plan a Funeral</b></a>
+      <a href="florist.html"><i>04</i><b>Florist</b></a>
+      <a href="guestbook.html"><i>05</i><b>Guestbook</b></a>
+      <a href="grief.html"><i>06</i><b>Grief Support</b></a>
+    </nav>
+    <div class="menu-foot mono"><span>404 Lilac Lane · Server Room B</span><span>open 24/7 · we never log off</span><span>☏ 1-800-RIP-DATA</span></div>
+  </div>
+
+  <main id="main">
+
+    <!-- ═════════════ 01 · HERO · the fan ═════════════ -->
+    <section class="fl-hero" id="top">
+      <canvas class="petals" id="petals" aria-hidden="true"></canvas>
+      <div class="fl-meta mono" aria-hidden="true"><span>⌖ the florist at dead air</span><span>cut fresh at midnight</span><span>same-day delivery to any inbox</span></div>
+
+      <div class="fan" id="fan" aria-hidden="true">
+        <span class="fan-f slot cut" data-img="img/HOME/flor-seen.webp" style="--a:-44deg"></span>
+        <span class="fan-f slot cut" data-img="img/HOME/flor-unfollow.webp" style="--a:-22deg"></span>
+        <span class="fan-f slot cut" data-img="img/HOME/flor-offline.webp" style="--a:0deg"></span>
+        <span class="fan-f slot cut" data-img="img/HOME/hero-lily.webp" style="--a:22deg"></span>
+        <span class="fan-f slot cut" data-img="img/HOME/flor-battery.webp" style="--a:44deg"></span>
+      </div>
+
+      <h1 class="fl-title"><span data-split>FLORIST</span></h1>
+      <div class="fl-foot">
+        <p class="fl-tag serif">Say it with lilies. <i>Delivered to inboxes, DMs, voicemails and comment sections, even the deleted ones.</i></p>
+        <a class="btn btn--ink" href="#build"><span>Arrange a bouquet</span><i aria-hidden="true">↓</i></a>
+      </div>
+    </section>
+
+    <!-- ═════════════ 02 · THE LANGUAGE OF FLOWERS ═════════════ -->
+    <section class="lang" id="language">
+      <div class="lang-list">
+        <header>
+          <p class="mono">01 / floriography, updated</p>
+          <h2 class="lang-title">The language <i class="serif">of flowers</i></h2>
+          <p class="lang-sub">The Victorians said it with petals. We say it with petals and a read receipt.</p>
+        </header>
+        <ol id="langList">
+          <li data-f="unfollow"><span class="mono">white lily</span><b>"I won't be logging back in."</b></li>
+          <li data-f="seen"><span class="mono">black rose</span><b>"Seen. Not answered. Never will be."</b></li>
+          <li data-f="offline"><span class="mono">lilac peony</span><b>"It was nice while it lasted, and it lasted until the update."</b></li>
+          <li data-f="battery"><span class="mono">dried bloom</span><b>"1%. Say what you need to say."</b></li>
+          <li data-f="lily"><span class="mono">two lilies, together</span><b>"We were mutuals."</b></li>
+        </ol>
+      </div>
+      <div class="lang-stage" aria-hidden="true">
+        <div class="lang-ring" id="langRing">
+          <span class="slot cut" data-k="unfollow" data-img="img/HOME/flor-unfollow.webp"></span>
+          <span class="slot cut" data-k="seen" data-img="img/HOME/flor-seen.webp"></span>
+          <span class="slot cut" data-k="offline" data-img="img/HOME/flor-offline.webp"></span>
+          <span class="slot cut" data-k="battery" data-img="img/HOME/flor-battery.webp"></span>
+          <span class="slot cut" data-k="lily" data-img="img/HOME/hero-lily.webp"></span>
+        </div>
+        <p class="lang-cap mono" id="langCap">white lily · nº 1 of 5</p>
+      </div>
+    </section>
+
+    <!-- ═════════════ 03 · ARRANGEMENTS ═════════════ -->
+    <section class="shop" id="arrangements">
+      <header class="sec-hd">
+        <p class="sec-no mono">02 / arrangements</p>
+        <h2 class="sec-title">Ready <i class="serif">to send</i></h2>
+        <p class="sec-note mono"><span>wrapped in black tissue</span><span>with a card, handwritten by vera</span></p>
+      </header>
+      <div class="shop-grid" id="shopGrid">
+        <article class="ar" data-f="unfollow"><div class="ar-img slot cut" data-img="img/HOME/flor-unfollow.webp" data-alt="A white lily"><div class="ph"><b>the unfollow</b></div></div><p class="ar-no mono">nº 01 · white lily</p><h3 class="ar-name">The Unfollow</h3><p class="ar-txt">For accounts you stopped following and never told.</p><p class="ar-buy"><span class="serif">$29</span><button type="button" class="ar-send mono" data-send="unfollow">send this →</button></p></article>
+        <article class="ar" data-f="seen"><div class="ar-img slot cut" data-img="img/HOME/flor-seen.webp" data-alt="A black rose"><div class="ph"><b>seen 3:12 am</b></div></div><p class="ar-no mono">nº 02 · black rose</p><h3 class="ar-name">Seen 3:12 AM</h3><p class="ar-txt">For conversations that ended on a blue tick.</p><p class="ar-buy"><span class="serif">$44</span><button type="button" class="ar-send mono" data-send="seen">send this →</button></p></article>
+        <article class="ar" data-f="offline"><div class="ar-img slot cut" data-img="img/HOME/flor-offline.webp" data-alt="A lilac peony"><div class="ph"><b>forever offline</b></div></div><p class="ar-no mono">nº 03 · lilac peony, xl</p><h3 class="ar-name">Forever Offline</h3><p class="ar-txt">The big one. For whole eras, whole friendships, whole phones.</p><p class="ar-buy"><span class="serif">$88</span><button type="button" class="ar-send mono" data-send="offline">send this →</button></p></article>
+        <article class="ar" data-f="battery"><div class="ar-img slot cut" data-img="img/HOME/flor-battery.webp" data-alt="A single dried flower"><div class="ph"><b>low battery</b></div></div><p class="ar-no mono">nº 04 · one dried bloom</p><h3 class="ar-name">Low Battery</h3><p class="ar-txt">Last-minute. Slightly sad. Still counts.</p><p class="ar-buy"><span class="serif">$1</span><button type="button" class="ar-send mono" data-send="battery">send this →</button></p></article>
+        <article class="ar" data-f="read"><div class="ar-img slot cut" data-img="img/FLORIST/flor-read.webp" data-alt="A bunch of forget-me-nots"><div class="ph"><b>left on read</b><i>img/FLORIST/flor-read.webp</i></div></div><p class="ar-no mono">nº 05 · forget-me-nots</p><h3 class="ar-name">Left on Read</h3><p class="ar-txt">Small, blue and persistent. Like the notification you ignored.</p><p class="ar-buy"><span class="serif">$18</span><button type="button" class="ar-send mono" data-send="read">send this →</button></p></article>
+        <article class="ar" data-f="typing"><div class="ar-img slot cut" data-img="img/FLORIST/flor-typing.webp" data-alt="Lily of the valley"><div class="ph"><b>typing…</b><i>img/FLORIST/flor-typing.webp</i></div></div><p class="ar-no mono">nº 06 · lily of the valley</p><h3 class="ar-name">Typing…</h3><p class="ar-txt">Three little bells that never quite turn into a message.</p><p class="ar-buy"><span class="serif">$33</span><button type="button" class="ar-send mono" data-send="typing">send this →</button></p></article>
+        <article class="ar" data-f="airplane"><div class="ar-img slot cut" data-img="img/FLORIST/flor-airplane.webp" data-alt="White orchids"><div class="ph"><b>airplane mode</b><i>img/FLORIST/flor-airplane.webp</i></div></div><p class="ar-no mono">nº 07 · white orchid</p><h3 class="ar-name">Airplane Mode</h3><p class="ar-txt">For people who didn't die, they just went quiet on purpose.</p><p class="ar-buy"><span class="serif">$56</span><button type="button" class="ar-send mono" data-send="airplane">send this →</button></p></article>
+        <article class="ar" data-f="storage"><div class="ar-img slot cut" data-img="img/FLORIST/flor-storage.webp" data-alt="A pale pink carnation"><div class="ph"><b>storage full</b><i>img/FLORIST/flor-storage.webp</i></div></div><p class="ar-no mono">nº 08 · one pale carnation</p><h3 class="ar-name">Storage Full</h3><p class="ar-txt">For the 9,000 photos that had to go so the update could happen.</p><p class="ar-buy"><span class="serif">$64</span><button type="button" class="ar-send mono" data-send="storage">send this →</button></p></article>
+      </div>
+    </section>
+
+    <!-- ═════════════ 04 · THE BUILDER · on black ═════════════ -->
+    <section class="build" id="build">
+      <header class="build-hd">
+        <p class="mono">03 / arrange it yourself</p>
+        <h2 class="build-title">Make a <i class="serif">bouquet</i></h2>
+        <p class="build-sub">Pick the stems. Vera does the rest. Move your cursor and they'll lean toward you.</p>
+      </header>
+
+      <div class="build-grid">
+        <div class="stage" id="stage">
+          <div class="stems" id="stems"></div>
+          <div class="vase slot cut" data-img="img/SERVICES/urn.webp" data-alt="A black vase"><div class="ph"><b>vase</b></div></div>
+          <p class="stage-empty mono" id="stageEmpty">the vase is empty · pick a stem below</p>
+        </div>
+
+        <div class="side">
+          <div class="shelf" id="shelf" role="group" aria-label="Stems">
+            <button type="button" data-f="unfollow"><span class="slot cut" data-img="img/HOME/flor-unfollow.webp"></span><b>white lily</b><small>$5 / stem</small></button>
+            <button type="button" data-f="seen"><span class="slot cut" data-img="img/HOME/flor-seen.webp"></span><b>black rose</b><small>$8 / stem</small></button>
+            <button type="button" data-f="offline"><span class="slot cut" data-img="img/HOME/flor-offline.webp"></span><b>lilac peony</b><small>$12 / stem</small></button>
+            <button type="button" data-f="battery"><span class="slot cut" data-img="img/HOME/flor-battery.webp"></span><b>dried bloom</b><small>$1 / stem</small></button>
+            <button type="button" data-f="lily"><span class="slot cut" data-img="img/HOME/hero-lily.webp"></span><b>two lilies</b><small>$6 / stem</small></button>
+            <button type="button" data-f="read"><span class="slot cut" data-img="img/FLORIST/flor-read.webp"></span><b>forget-me-not</b><small>$3 / stem</small></button>
+            <button type="button" data-f="typing"><span class="slot cut" data-img="img/FLORIST/flor-typing.webp"></span><b>lily of the valley</b><small>$7 / stem</small></button>
+            <button type="button" data-f="airplane"><span class="slot cut" data-img="img/FLORIST/flor-airplane.webp"></span><b>white orchid</b><small>$14 / stem</small></button>
+            <button type="button" data-f="storage"><span class="slot cut" data-img="img/FLORIST/flor-storage.webp"></span><b>carnation</b><small>$4 / stem</small></button>
+          </div>
+          <div class="side-tools mono">
+            <span><b id="stemN">0</b> / 9 stems · <b id="stemT">$0</b></span>
+            <button type="button" id="shuffle">shuffle</button>
+            <button type="button" id="empty">empty the vase</button>
+          </div>
+
+          <form class="card" id="card" autocomplete="off">
+            <p class="card-h mono">the card</p>
+            <label><span class="mono">to</span><input name="to" maxlength="40" placeholder="@an_account_that_no_longer_exists"></label>
+            <label class="card-msg"><span class="mono">message</span><textarea name="msg" maxlength="140" rows="3" placeholder="thinking of you. not in a weird way."></textarea></label>
+            <p class="card-preview script" id="cardPreview">thinking of you. not in a weird way.</p>
+            <label><span class="mono">from</span><input name="from" maxlength="30" placeholder="someone who still checks"></label>
+            <button class="btn btn--light" type="submit"><span>Send the flowers</span><i aria-hidden="true">→</i></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="sent" id="sent" aria-live="polite">
+        <div class="env" aria-hidden="true"><i class="env-flap"></i><i class="env-seal">✝</i></div>
+        <ol class="track mono" id="track">
+          <li>order received</li>
+          <li>wrapped in black tissue</li>
+          <li>out for delivery</li>
+          <li>delivered</li>
+          <li class="track-x">read? <span>never. that's okay.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ═════════════ 05 · DELIVERY ═════════════ -->
+    <section class="dl" id="delivery">
+      <div class="dl-row">
+        <div><p class="mono">to inboxes</p><p class="serif">Arrives as an unread email with a lily in the subject line. It will sit there, bold, forever.</p></div>
+        <div><p class="mono">to DMs</p><p class="serif">Delivered as a photo. If you've been blocked, we leave it at the door.</p></div>
+        <div><p class="mono">to voicemail</p><p class="serif">Vera reads the card aloud after the beep. She does a lovely voice.</p></div>
+        <div><p class="mono">to the comment section</p><p class="serif">Posted under their last photo. Pinned, if the account still lets us.</p></div>
+      </div>
+      <p class="dl-note mono">if the recipient no longer exists, we deliver anyway. that's the whole point.</p>
+    </section>
+
+  </main>
+
+  <!-- ═════════════ FOOTER ═════════════ -->
+  <footer class="ftr">
+    <p class="ftr-big" aria-label="We never log off"><span>WE NEVER</span><span>LOG OFF.</span></p>
+    <div class="ftr-grid">
+      <div>
+        <p class="ftr-logo">DEAD<b>AIR</b></p>
+        <p class="ftr-small">Funeral directors for the digitally deceased.<br>404 Lilac Lane · Server Room B<br>Open 24/7. Grief keeps no office hours.<br>☏ 1-800-RIP-DATA</p>
+      </div>
+      <nav class="ftr-nav" aria-label="Footer">
+        <a href="services.html">Services</a><a href="obituaries.html">Obituaries</a><a href="plan.html">Plan a Funeral</a><a href="florist.html">Florist</a><a href="guestbook.html">Guestbook</a><a href="grief.html">Grief Support</a>
+      </nav>
+      <div class="ftr-sign">
+        <p class="mono">concept, design &amp; code</p>
+        <p class="script">ghostly.grl ♥</p>
+        <p class="mono ftr-tiny">a fictional funeral home · © 2026</p>
+      </div>
+    </div>
+  </footer>
+
+  <i class="dead-px" id="deadPx" aria-hidden="true"></i>
+  <div class="cursor" id="cursor" aria-hidden="true"><i></i><span class="mono" id="cursorLbl"></span></div>
+  <div class="toast mono" id="toast" role="status" aria-live="polite"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="js/main.js?v=20261010-1"></script>
+  <script src="js/eggs.js?v=20261010-1"></script>
+  <script src="js/florist.js?v=20261010-1"></script>
+</body>
+  <!--
+   *    /\_/\      +
+       ( o.o )   <3  ghostly.grl
+   +    > ^ <          *
+-->
+</html>
